@@ -1,19 +1,30 @@
+#include "script_component.hpp"
+
 class CfgPatches {
-    class brushClearing {
+    class ADDON {
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
-        requiredVersion = 0.6;
+        requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"ace_trenches"};
-        version = 2.0.0;
-        versionStr = 2.0.0;
-        versionAr[] = {2, 0, 0};
-        author = "TF47 Desty";
+        author = "Ampersand";
+        authors[] = {"Ampersand","Rampage"};
+        url = "https://github.com/ampersand38/Brush-Clearing";
+        VERSION_CONFIG;
     };
 };
 
-
-#include "CfgFunctions.hpp"
-
+class CfgFunctions {
+    class TF47 
+    {
+        class brushClearing 
+        {
+            file = "z\TF47\addons\brushClearing\functions";
+            class clearBrush;
+            class canClearBrush;
+        };
+    };
+};
 
 class CfgVehicles {
     class Man;
@@ -21,7 +32,7 @@ class CfgVehicles {
         class ACE_SelfActions {
             class ACE_Equipment {
                 class ClearBrush {
-                    displayName = "Clear Grass / Bush";
+                    displayName = "Clear Grass/Bush";
                     condition = "[_player] call TF47_fnc_canClearBrush";
                     //wait a frame to handle "Do When releasing action menu key" option
                     statement = "[{[] call TF47_fnc_clearBrush},[]] call CBA_fnc_execNextFrame";
@@ -33,3 +44,5 @@ class CfgVehicles {
         };
     };
 };
+
+#include "CfgEventHandlers.hpp"

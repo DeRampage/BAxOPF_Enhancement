@@ -1,5 +1,6 @@
+#include "script_component.hpp"
 /*
-* Author: Ampers
+* Author: Ampersand
 * Destroy a bush or place a grass cutter
 *
 * Arguments:
@@ -9,30 +10,33 @@
 * -
 *
 * Example:
-* [] call ClearBrush_fnc_clearBrush
+* [] call TF47_fnc_clearBrush
 */
 
-private _position0 = AGLToASL positionCameraToWorld [0, 0, 0]; 
-private _position1 = AGLToASL positionCameraToWorld [0, 0, 2]; 
- 
-private _intersections = lineIntersectsSurfaces [_position0, _position1, cameraOn, objNull, true, 1, "VIEW"]; 
- 
+"ace_gestures_cover" call ace_gestures_fnc_playSignal;
+
+private _position0 = AGLToASL positionCameraToWorld [0, 0, 0];
+private _position1 = AGLToASL positionCameraToWorld [0, 0, 2];
+
+private _intersections = lineIntersectsSurfaces [_position0, _position1, cameraOn, objNull, true, 1, "VIEW"];
+
 if (_intersections isEqualTo []) exitWith {};
 
 (_intersections # 0) params ["_intersectPosASL", "_surfaceNormal", "_intersectObj", "_parentObject"];
 
 if (_intersectObj isEqualTo objNull && {_parentObject isEqualTo objNull}) then {
     //terrain, spawn grass cutter
-    _cutter = createVehicle ["Land_ClutterCutter_small_F", ASLtoAGL _intersectPosASL, [], 0, "CAN_COLLIDE"];
-    [
-        {
-            params ["_cutter"];
-            deleteVehicle _cutter;
-        }, 
-        [_cutter],
-        300
-    ] call CBA_fnc_waitAndExecute;
-    
+    private _existing = _intersectPosASL nearestObject "Land_ClutterCutter_small_F";
+    private _distance = 1;
+    private _cutter = "Land_ClutterCutter_small_F";
+    if (_existing != objNull) then {
+        _distance = _existing distance ASLtoAGL _intersectPosASL;
+    };
+    if (_distance < 0.5) then {
+        _cutter = "Land_ClutterCutter_medium_F";
+    };
+
+    createVehicle [_cutter, ASLtoAGL _intersectPosASL, [], 0, "CAN_COLLIDE"];
 } else {
     //not terrain
     if !((nearestTerrainObjects [ _intersectObj , ["Bush"], 0]) isEqualTo [] ) then {
