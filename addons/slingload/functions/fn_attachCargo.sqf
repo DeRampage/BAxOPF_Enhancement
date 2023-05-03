@@ -48,7 +48,7 @@ private _cargoHookName = [
 ] select _cargoHookIndex;
 
 private _heliModel = getText (configOf _heli >> "model");
-private _cargoHookPosition = if (_heliModel in slr_customHooks) then {
+private _cargoHookPosition = if (_heliModel in TF47_customHooks) then {
     private _customHooksInfo = TF47_customHooks get _heliModel;
     _customHooksInfo select _cargoHookIndex
 } else {
