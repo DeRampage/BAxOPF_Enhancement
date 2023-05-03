@@ -1,5 +1,5 @@
-name = "baxopf_enhancement_mod"
-modname = "baxopf_enhancement_mod"
+name = "baxopf_enhancement"
+modname = "baxopf_enhancement"
 prefix = "BAxOPF"
 author = "Rampage"
 mainprefix = "z"

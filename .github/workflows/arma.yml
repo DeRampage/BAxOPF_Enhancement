@@ -35,13 +35,13 @@ jobs:
       uses: actions/checkout@master
     - name: Checkout submodules
       run: git submodule update --init --recursive
-    - uses: gruppe-adler/action-release-with-hemtt@60f7195e5240289fecd07c29cc5ec8fd92ad2159
+    - uses: gruppe-adler/action-release-with-hemtt@v3
       name: 'Build Mod with HEMTT'
       id: build
     - name: Upload Artifact
       uses: actions/upload-artifact@v2-preview
       with:
-        name: baxopf-enhancement
+        name: baxopf_enhancement
         path: ${{ steps.build.outputs.release_path }}
 
   job_release:
@@ -51,9 +51,9 @@ jobs:
     steps:
       # Download the build mod
       - name: Download latest build
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
-          name: baxopf-enhancement
+          name: baxopf_enhancement
 
       # zip it
       - uses: papeloto/action-zip@v1
@@ -67,4 +67,4 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: true
           files: |
-            \@baxopf-enhancement.zip
+            \@baxopf_enhancement.zip
