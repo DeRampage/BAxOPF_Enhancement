@@ -1,6 +1,6 @@
-
 private _displayName = localize LSTRING(AttachCargo);
 private _icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
+
 //private _statement = TF47_slingload_fnc_attachCargo;
 private _statement = {[_target, _player, []] call TF47_slingload_fnc_attachCargo};
 private _condition = TF47_slingload_fnc_canAttachCargo;
@@ -9,40 +9,48 @@ private _cargoHookNameForward = "TF47_slingload_cargoHookForward";
 private _cargoHookNameAft = "TF47_slingload_cargoHookAft";
 private _position = "slingload0";
 
+// Create Ace Action
 _action = ["TF47_slingload_attachCargo", _displayName, _icon, _statement, _condition, {}, _cargoHookName, _position, 5.0] call ace_interact_menu_fnc_createAction;
 //["Helicopter_Base_H", 0, [], _action, true] call ace_interact_menu_fnc_addActionToClass; //includes also some unwanted Helos
 
-//Load Heli Configs
+//Load Heli Configs - TF47 Rampage stuff
 #include "configs\Vanilla.sqf"
 
-// Create Ace Action
-_displayName = localize LSTRING(ReleaseCargo);
-_icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
-_statement = {[_target] call TF47_slingload_fnc_releaseCargo};
-_condition = {[_target, _player] call TF47_slingload_fnc_canReleaseCargo};
-_action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
-["Helicopter", 1, ["ACE_SelfActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+{
+    _displayName = localize LSTRING(ReleaseCargo);
+    _statement = {[_target] call TF47_slingload_fnc_releaseCargo};
+    _condition = {[_target, _player] call TF47_slingload_fnc_canReleaseCargo};
+    _action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
+    [_x, 1, ["ACE_SelfActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
-_displayName = localize LSTRING(CargoHookNameMain);
-//_icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
-_statement = {[_target, "Main"] call TF47_slingload_fnc_releaseCargo};
-_condition = {[_target, _player, "Main"] call TF47_slingload_fnc_canReleaseCargo};
-_action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
-["Helicopter", 1, ["ACE_SelfActions", "TF47_slingload_releaseCargo"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+    _displayName = localize LSTRING(CargoHookNameMain);
+    //_icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
+    _statement = {[_target, "Main"] call TF47_slingload_fnc_releaseCargo};
+    _condition = {[_target, _player, "Main"] call TF47_slingload_fnc_canReleaseCargo};
+    _action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
+    [_x, 1, ["ACE_SelfActions", "TF47_slingload_releaseCargo"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
-_displayName = localize LSTRING(CargoHookNameForward);
-//_icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
-_statement = {[_target, "Forward"] call TF47_slingload_fnc_releaseCargo};
-_condition = {[_target, _player, "Forward"] call TF47_slingload_fnc_canReleaseCargo};
-_action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
-["Helicopter", 1, ["ACE_SelfActions", "TF47_slingload_releaseCargo"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+    _displayName = localize LSTRING(CargoHookNameForward);
+    //_icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
+    _statement = {[_target, "Forward"] call TF47_slingload_fnc_releaseCargo};
+    _condition = {[_target, _player, "Forward"] call TF47_slingload_fnc_canReleaseCargo};
+    _action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
+    [_x, 1, ["ACE_SelfActions", "TF47_slingload_releaseCargo"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
-_displayName = localize LSTRING(CargoHookNameAft);
-//_icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
-_statement = {[_target, "Aft"] call TF47_slingload_fnc_releaseCargo};
-_condition = {[_target, _player, "Aft"] call TF47_slingload_fnc_canReleaseCargo};
-_action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
-["Helicopter", 1, ["ACE_SelfActions", "TF47_slingload_releaseCargo"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+    _displayName = localize LSTRING(CargoHookNameAft);
+    //_icon = "\a3\ui_f\data\igui\cfg\vehicletoggles\slingloadropeiconon2_ca.paa";
+    _statement = {[_target, "Aft"] call TF47_slingload_fnc_releaseCargo};
+    _condition = {[_target, _player, "Aft"] call TF47_slingload_fnc_canReleaseCargo};
+    _action = ["TF47_slingload_releaseCargo", _displayName, _icon, _statement, _condition] call ace_interact_menu_fnc_createAction;
+    [_x, 1, ["ACE_SelfActions", "TF47_slingload_releaseCargo"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+    [_x, "init", FUNC(addACEActions), true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach [
+    "Helicopter",
+    "VTOL_Base_F",
+    "CUP_B_MV22_USMC"
+];
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // cargo

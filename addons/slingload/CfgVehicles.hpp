@@ -1,4 +1,9 @@
 class CfgVehicles {
+    class Plane_Base_F {};
+    class VTOL_Base_F: Plane_Base_F {
+        slingLoadMaxCargoMass = 13000;
+    };
+
     class ace_refuel_helper;
     class TF47_slingload_apexFitting: ace_refuel_helper {
         author = "Ampersand";
@@ -43,4 +48,19 @@ class CfgVehicles {
         };
         */
     };
+    /*
+    class Rope;
+    class slr_Rope : Rope {
+    model = "\z\slr\addons\slingload\data\rope.p3d";
+    segmentType = "slr_RopeSegment";
+};
+    class slr_RopeLadder : Rope {
+        model = "\z\slr\addons\slingload\data\ropeLadder.p3d";
+        segmentType = "slr_RopeLadderSegment";
+    };
+    class slr_RopeLadder2 : Rope {
+        model = "\z\slr\addons\slingload\data\ropeLadder2.p3d";
+        segmentType = "slr_RopeLadderSegment2";
+    };
+    */
 };
