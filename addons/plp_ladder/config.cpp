@@ -50,21 +50,21 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class LadderCivilUpLoop;
 		class PLP_LTR_LadderCivilUpLoop: LadderCivilUpLoop
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderUpCiv.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderUpCiv.rtm";
 			speed = "-(25/30)";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderCivilStatic",0.1,"PLP_LTR_LadderCivilDownLoop",0.1,"LadderCivilTopOff",0.1,"PLP_LTR_LadderCivilSlide",0.1};
 			stamina = -1;
 		};
 		class PLP_LTR_LadderCivilDownLoop: LadderCivilUpLoop
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderDownCiv.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderDownCiv.rtm";
 			speed = "-(25/30)/1.1111";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderCivilStatic",0.1,"PLP_LTR_LadderCivilUpLoop",0.1,"LadderCivilDownOff",0.1,"PLP_LTR_LadderCivilSlide",0.1};
 			stamina = -0.3;
 		};
 		class PLP_LTR_LadderRifleUpLoop: LadderCivilUpLoop
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderUpRfl.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderUpRfl.rtm";
 			speed = "-(25/30)/1.1111";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderRifleStatic",0.1,"PLP_LTR_LadderRifleDownLoop",0.1,"LadderRifleTopOff",0.1,"PLP_LTR_LadderRifleSlide",0.1};
 			actions = "LadderRifleActions";
@@ -72,29 +72,29 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderRifleDownLoop: PLP_LTR_LadderRifleUpLoop
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderDownRfl.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderDownRfl.rtm";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderRifleStatic",0.1,"PLP_LTR_LadderRifleUpLoop",0.1,"LadderRifleDownOff",0.1,"PLP_LTR_LadderRifleSlide",0.1};
 			stamina = -0.3;
 		};
 		class PLP_LTR_LadderCivilStatic: LadderCivilStatic
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderStaticCiv.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderStaticCiv.rtm";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderCivilUpLoop",0.1,"PLP_LTR_LadderCivilDownLoop",0.1,"PLP_LTR_LadderCivilSlide",0.1};
 		};
 		class PLP_LTR_LadderRifleStatic: LadderRifleStatic
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderStaticRfl.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderStaticRfl.rtm";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderRifleUpLoop",0.1,"PLP_LTR_LadderRifleDownLoop",0.1,"PLP_LTR_LadderRifleSlide",0.1};
 		};
 		class PLP_LTR_LadderCivilSlide: LadderCivilStatic
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderSlideCiv.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderSlideCiv.rtm";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderCivilSlideEnd",0.01};
 			actions = "NoActions";
 		};
 		class PLP_LTR_LadderRifleSlide: LadderRifleStatic
 		{
-			file = "plp\PLP_ladderTweakRemastered\data\ladderSlideRfl.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderSlideRfl.rtm";
 			InterpolateTo[] = {"Unconscious",0.02,"PLP_LTR_LadderRifleSlideEnd",0.01};
 			actions = "NoActions";
 		};
@@ -102,7 +102,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		{
 			looped = 0;
 			speed = "-(37/30)";
-			file = "plp\PLP_ladderTweakRemastered\data\ladderSlideEndCiv.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderSlideEndCiv.rtm";
 			InterpolateTo[] = {"Unconscious",0.02,"AmovPercMstpSnonWnonDnon",0.3};
 			actions = "NoActions";
 		};
@@ -110,7 +110,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		{
 			looped = 0;
 			speed = "-(37/30)";
-			file = "plp\PLP_ladderTweakRemastered\data\ladderSlideEndRfl.rtm";
+			file = "z\TF47\addons\plp_ladder\data\ladderSlideEndRfl.rtm";
 			InterpolateTo[] = {"Unconscious",0.02,"AmovPercMstpSlowWrflDnon",0.3};
 			actions = "NoActions";
 		};
@@ -156,7 +156,7 @@ class CfgFunctions
 		{
 			class LTR_ladderSlideDown
 			{
-				file = "plp\PLP_ladderTweakRemastered\fn_ladderSlideDown.sqf";
+				file = "z\TF47\addons\plp_ladder\fn_ladderSlideDown.sqf";
 			};
 		};
 	};
