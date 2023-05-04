@@ -10,8 +10,8 @@ class CfgVehicles {
         displayName = CSTRING(SlingLoadApexFitting);
         _generalMacro = "TF47_slingload_apexFitting";
         icon = "\a3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa";
-        //model = "\z\TF47\addons\slingload\data\apexFitting.p3d";
-        model = "\z\TF47\addons\slingload\data\ropeEndLoop.p3d";
+        model = "\z\TF47\addons\slingload\data\apexFitting.p3d";
+        //model = "\z\TF47\addons\slingload\data\ropeEndLoop.p3d"; //wrong path on texture ropeEndLoop_co.paa
         damageEffect = "";
         destrType = "";
         acre_hasInfantryPhone = 0;
