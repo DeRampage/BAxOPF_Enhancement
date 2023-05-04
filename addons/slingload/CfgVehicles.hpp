@@ -1,4 +1,9 @@
 class CfgVehicles {
+    class Plane_Base_F {};
+    class VTOL_Base_F: Plane_Base_F {
+        slingLoadMaxCargoMass = 13000;
+    };
+
     class ace_refuel_helper;
     class TF47_slingload_apexFitting: ace_refuel_helper {
         author = "Ampersand";
@@ -6,6 +11,7 @@ class CfgVehicles {
         _generalMacro = "TF47_slingload_apexFitting";
         icon = "\a3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa";
         model = "\z\TF47\addons\slingload\data\apexFitting.p3d";
+        //model = "\z\TF47\addons\slingload\data\ropeEndLoop.p3d"; //wrong path on texture ropeEndLoop_co.paa
         damageEffect = "";
         destrType = "";
         acre_hasInfantryPhone = 0;
@@ -43,4 +49,19 @@ class CfgVehicles {
         };
         */
     };
+    /*
+    class Rope;
+    class TF47_Rope : Rope {
+    model = "\z\TF47\addons\slingload\data\rope.p3d";
+    segmentType = "TF47_RopeSegment";
+};
+    class TF47_RopeLadder : Rope {
+        model = "\z\TF47\addons\slingload\data\ropeLadder.p3d";
+        segmentType = "TF47_RopeLadderSegment";
+    };
+    class TF47_RopeLadder2 : Rope {
+        model = "\z\TF47\addons\slingload\data\ropeLadder2.p3d";
+        segmentType = "TF47_RopeLadderSegment2";
+    };
+    */
 };

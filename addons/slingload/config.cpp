@@ -2,7 +2,7 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT_NAME;
+        name = COMPONENT;
         units[] = {
             "TF47_slingload_apexFitting",
             "TF47_slingload_wreckDummy"
@@ -10,12 +10,12 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"ace_interaction"};
-        author = "";
-        authors[] = {""};
+        author = "Ampersand";
+        authors[] = {"Ampersand","Rampage"};
+        authorUrl = "https://github.com/ampersand38/slr";
         VERSION_CONFIG;
     };
 };
-
 class CfgFunctions 
 {
     class TF47
@@ -23,6 +23,7 @@ class CfgFunctions
         class Slingload
         {
             file = "z\TF47\addons\slingload\functions";
+            class addACEActions{};
             class adjustRigging{};
             class canAdjustRigging{};
             class attachCargo{};
@@ -47,4 +48,5 @@ class CfgFunctions
 
 #include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgNonAIVehicles.hpp"
 #include "CfgWeapons.hpp"

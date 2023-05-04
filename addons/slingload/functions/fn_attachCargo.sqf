@@ -17,7 +17,7 @@
  * [cursorObject, player, (cursorObject selectionPosition "slingload0") vectorAdd [0,-3,0]] call TF47_slingload_fnc_attachCargo
  */
 
-params ["_heli", "_unit", ["_cargoHookPosition", []]];
+params ["_heli", "_unit", ["_cargoHookIndex", 0]];
 
 private _apexFitting = _unit getVariable ["TF47_slingload_heldFitting", objNull];
 if (isNull _apexFitting) exitWith {false};
@@ -41,31 +41,18 @@ private _liftPoints = _apexFitting getVariable ["TF47_slingload_points4Fitting",
 _apexFitting setVariable ["TF47_slingload_cargo4Fitting", objNull, true];
 deleteVehicle _apexFitting;
 
-private _cargoHookName = "TF47_slingload_cargoHookMain";
-if (_cargoHookPosition isEqualTo []) then {
-    _cargoHookPosition = _heli selectionPosition "slingload0";
-    if (_cargoHookPosition isEqualTo [0, 0, 0]) then {
-        // no slingload mem point, get safe attachment position
-        private _centerOfMass = getCenterOfMass _heli;
-        private _position0 = [_centerOfMass # 0, _centerOfMass # 1, boundingBox _heli # 0 # 2];
-        private _intersections = lineIntersectsSurfaces [
-            AGLToASL (_heli modelToWorldVisual _centerOfMass),
-            AGLToASL (_heli modelToWorldVisual _position0),
-            objNull,
-            objNull,
-            false,
-            -1
-        ] select {_x # 3 == _heli};
-        if (count _intersections > 0) then {
-            _cargoHookPosition = _heli worldToModel (ASLToAGL (_intersections # 0 # 0));
-        };
-    }
+private _cargoHookName = [
+    "TF47_slingload_cargoHookMain",
+    "TF47_slingload_cargoHookForward",
+    "TF47_slingload_cargoHookAft"
+] select _cargoHookIndex;
+
+private _heliModel = getText (configOf _heli >> "model");
+private _cargoHookPosition = if (_heliModel in TF47_customHooks) then {
+    private _customHooksInfo = TF47_customHooks get _heliModel;
+    _customHooksInfo select _cargoHookIndex
 } else {
-    _cargoHookName = ["TF47_slingload_cargoHookForward", "TF47_slingload_cargoHookAft"] select (
-        _cargoHookPosition # 1
-        <
-        (_heli selectionPosition "slingload0") # 1
-    );
+    _heli selectionPosition "slingload0"
 };
 
 private _ropes4Hook = _heli getVariable [_cargoHookName, []];
@@ -78,16 +65,6 @@ private _ropes4Hook = _heli getVariable [_cargoHookName, []];
 
 _heli setVariable [_cargoHookName, _ropes4Hook - [objNull], true];
 _cargo setVariable ["TF47_slingload_ropes4Cargo", _ropes4Cargo - [objNull], true];
-
-//count the slingloads
-private _count = _heli getVariable [_cargoHookName + "_count", 0];
-if (_count == 0) then
-{
-    _heli setVariable [_cargoHookName + "_count",1,true]; 
-} else {
-    _heli setVariable [_cargoHookName + "_count",_count + 1,true]; 
-};
-
 
 ["TF47_slingload_localise", [_heli]] call CBA_fnc_serverEvent;
 
