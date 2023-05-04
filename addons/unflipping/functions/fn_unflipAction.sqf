@@ -19,7 +19,7 @@ params [
     ["_vehicle", objNull, [objNull]]
 ];
 
-if (TF47vehicle_mass_limit < getMass _vehicle) exitWith {
+if (TF47_vehicle_mass_limit < getMass _vehicle) exitWith {
     [
         ["a3\3den\data\controlsgroups\tutorial\close_ca.paa", 1, [1,0,0]],
         [localize "STR_TF47_to_heavy"]
@@ -35,7 +35,7 @@ private _neededUnits = _vehicle call TF47_fnc_unflipRequiredAmount;
 
 // Inform server about unflipping start
 if !(PLAYER in UNFLIPPING_UNITS) exitWith {
-    ["TF47unflip_start", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+    ["TF47_unflip_start", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
 };
 
 // Notify
@@ -57,7 +57,7 @@ if !(PLAYER in UNFLIPPING_UNITS) exitWith {
         // onSuccess
         {
             _this#0 params ["_vehicle"];
-            ["TF47unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+            ["TF47_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
             // Notify
             [
                 ["\a3\3den\data\attributes\loiterdirection\cw_ca.paa"],
@@ -71,7 +71,7 @@ if !(PLAYER in UNFLIPPING_UNITS) exitWith {
 
             // don't stop unflipping if waiting progressBar was closed by new progressBar
             if (_failureCode != 3) then {
-                ["TF47unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+                ["TF47_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
             };
         },
         _this

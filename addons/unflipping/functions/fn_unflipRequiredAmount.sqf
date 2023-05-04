@@ -19,5 +19,5 @@ params [
     ["_vehicle", objNull, [objNull]]
 ];
 
-// Every "TF47unit_mass_limit" needs one man, max "TF47unit_man_limit", min one
-ceil ((getMass _vehicle / TF47unit_mass_limit) min TF47unit_man_limit) max 1
+// Every "TF47_unit_mass_limit" needs one man, max "TF47_unit_man_limit", min one
+ceil ((getMass _vehicle / TF47_unit_mass_limit) min TF47_unit_man_limit) max 1

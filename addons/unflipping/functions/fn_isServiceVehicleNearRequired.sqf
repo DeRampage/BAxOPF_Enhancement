@@ -21,7 +21,7 @@ params [
     ["_target", objNull, [objNull]]
 ];
 
-if !(TF47require_serviceVehicle) exitWith {true};
+if !(TF47_require_serviceVehicle) exitWith {true};
 
 private _nearObjects = nearestObjects [_target, ["Air", "LandVehicle", "Slingload_base_F"], 5 + sizeOf typeOf _target];
 
