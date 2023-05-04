@@ -77,7 +77,7 @@ if (_enable) then {
         ];
     };
 
-    TF47debugPFH = [_fnc_show, 0] call CBA_fnc_addPerFrameHandler;
+    TF47_debugPFH = [_fnc_show, 0] call CBA_fnc_addPerFrameHandler;
 } else {
-    (missionNamespace getVariable ["TF47debugPFH", -1]) call CBA_fnc_removePerFrameHandler;
+    (missionNamespace getVariable ["TF47_debugPFH", -1]) call CBA_fnc_removePerFrameHandler;
 };

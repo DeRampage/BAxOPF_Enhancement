@@ -2,7 +2,7 @@
 #define UNFLIP_FORCEFACTOR_STEP     0.2
 #define UNFLIP_FORCEFACTOR_MAX      5
 
-["TF47unflip_start", {
+["TF47_unflip_start", {
     params ["_vehicle", "_player"];
 
     diag_log text format ["[TF47_Unflipping] Player '%1', started unflipping '%2'", _player, _vehicle];
@@ -28,7 +28,7 @@
             // args
             [_vehicle, _requiredUnits],
             // timeout
-            TF47time,
+            TF47_unflip_time,
             // onTimeout (success)
             {
                 params ["_vehicle"];
@@ -63,15 +63,15 @@
         ] call CBA_fnc_waitUntilAndExecute;
 
         // Inform clients that unflip is ready and force them into unflip action wait time
-        ["TF47unflip_ready", [_vehicle, _requiredUnits, TF47time], _unflippingUnits] call CBA_fnc_targetEvent;
+        ["TF47_unflip_ready", [_vehicle, _requiredUnits, TF47_unflip_time], _unflippingUnits] call CBA_fnc_targetEvent;
     };
 
     diag_log text format ["[TF47_Unflipping] Vehicle '%1', not enough people to unflip (%2)", _vehicle, _requiredUnits];
-    ["TF47unflip_start_client", _vehicle, _player] call CBA_fnc_targetEvent;
+    ["TF47_unflip_start_client", _vehicle, _player] call CBA_fnc_targetEvent;
 
 }] call CBA_fnc_addEventHandler;
 
-["TF47unflip_stop", {
+["TF47_unflip_stop", {
     params ["_vehicle", "_player"];
     diag_log text format ["[TF47_Unflipping] Player '%1', stopped unflipping '%2'", _player, _vehicle];
 

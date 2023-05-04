@@ -6,7 +6,7 @@
 }] call CBA_fnc_addEventHandler;
 
 // Force player to wait for unflipping time
-["TF47unflip_ready", {
+["TF47_unflip_ready", {
 
     diag_log text "[TF47_Unflipping] Unflip ready";
 
@@ -35,7 +35,7 @@
 
                 // user hit ESC
                 if (_failureCode == 1) then {
-                    ["TF47unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+                    ["TF47_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
 
                 // user did not hit ESC --> other reason for failure
                 } else {
@@ -58,7 +58,7 @@
 // Add ACE3 or Vanilla actions to vehicles
 if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
 
-    private _unflipAction = ["TF47unflip", localize "STR_TF47_act", "\a3\3den\data\attributes\loiterdirection\cw_ca.paa",
+    private _unflipAction = ["TF47_unflip", localize "STR_TF47_act", "\a3\3den\data\attributes\loiterdirection\cw_ca.paa",
         {
             _target call TF47_fnc_unflipAction;
         },

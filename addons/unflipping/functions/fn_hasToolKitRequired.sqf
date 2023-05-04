@@ -19,6 +19,6 @@ params [
     ["_unit", objNull, [objNull]]
 ];
 
-if !(TF47require_toolkit) exitWith {true};
+if !(TF47_require_toolkit) exitWith {true};
 
 "ToolKit" in (items _unit)

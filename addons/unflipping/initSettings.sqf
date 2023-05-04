@@ -22,9 +22,9 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47_time",
+    "TF47_unflip_time",
     "SLIDER",
-    [localize "STR_TF47_time", localize "STR_TF47_time_desc"],
+    [localize "STR_TF47_unflip_time", localize "STR_TF47_unflip_time_desc"],
     SETTINGS_CAT,
     [1, 600, 5, 0],
     true,

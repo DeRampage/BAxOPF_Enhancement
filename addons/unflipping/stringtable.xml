@@ -55,7 +55,7 @@
         <Chinesesimp>设定单次翻正操作的最大操作人数限制。</Chinesesimp>
         <French>Définit le nombre maximum de personnes qui peuvent être nécessaires pour retourner.</French>
     </Key>
-    <Key ID="STR_TF47_time">
+    <Key ID="STR_TF47_unflip_time">
         <Original>Unflipping time</Original>
         <German>Aufrichtzeit</German>
         <Polish>Czas odwracania</Polish>
@@ -64,7 +64,7 @@
         <Chinesesimp>翻正时间</Chinesesimp>
         <French>Temps de retournement </French>
     </Key>
-    <Key ID="STR_TF47_time_desc">
+    <Key ID="STR_TF47_unflip_time_desc">
         <Original>Defines how long it will take to unflip the vehicle.</Original>
         <German>Legt fest, wie lange das Aufrichten eines Fahrzeugs dauert.</German>
         <Polish>Określa jak długo będzie trwało obracanie pojazdu.</Polish>

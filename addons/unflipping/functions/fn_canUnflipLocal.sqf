@@ -1,5 +1,5 @@
 /*
-    TF47_fnc_canUnflipLocal
+TF47_fnc_canUnflipLocal
 
     File: fn_canUnflipLocal.sqf
     Date: 2019-06-18
