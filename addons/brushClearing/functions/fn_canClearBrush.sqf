@@ -35,9 +35,9 @@ private _startPos = if (_isPlayer) then {
     eyePos _unit
 };
 
-// Check 2m in front of unit if there is an object
+// Check 7m in front of unit if there is an object
 private _intersections = lineIntersectsSurfaces [_startPos, _startPos vectorAdd ((getCameraViewDirection _unit) vectorMultiply 7), _unit];
-hint format ["%1", _intersections];
+
 if (_intersections isEqualTo []) exitWith {false};
 
 (_intersections # 0) params ["_intersectPosASL", "", "_intersectObj", "_parentObject"];
