@@ -42,7 +42,7 @@ class CfgWeapons {
         scope=2;
         author="Rabbit";
         picture="\z\TF47\addons\clearTree\textures\Axe_Icon.paa";
-        ACE_Attachable = "Land_Axe_F";
+        //ACE_Attachable = "Land_Axe_F"; //why?!
         model = "\A3\Structures_F\Items\Tools\Axe_F.p3d";
         icon="iconObject_circle";
         descriptionShort="Paul Bunyan";

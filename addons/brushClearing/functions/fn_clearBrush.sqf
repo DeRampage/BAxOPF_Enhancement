@@ -24,7 +24,7 @@ private _startPos = if (isPlayer _unit) then {
 };
 
 // Check 2m in front of unit if there is an object
-private _intersections = lineIntersectsSurfaces [_startPos, _startPos vectorAdd ((getCameraViewDirection _unit) vectorMultiply 2), _unit];
+private _intersections = lineIntersectsSurfaces [_startPos, _startPos vectorAdd ((getCameraViewDirection _unit) vectorMultiply 7), _unit];
 
 if (_intersections isEqualTo []) exitWith {objNull};
 
@@ -35,9 +35,9 @@ if (_intersections isEqualTo []) exitWith {objNull};
 
 // If terrain, spawn grass cutter
 if (isNull _intersectObj && {isNull _parentObject}) then {
-    private _existing = _intersectPosASL nearestObject "Land_ClutterCutter_small_F";
+    private _existing = _intersectPosASL nearestObject "Land_ClutterCutter_medium_F";
     private _distance = 1;
-    private _cutter = "Land_ClutterCutter_small_F";
+    private _cutter = "Land_ClutterCutter_medium_F";
 
     _intersectPosASL = ASLtoAGL _intersectPosASL;
 
@@ -46,12 +46,12 @@ if (isNull _intersectObj && {isNull _parentObject}) then {
     };
 
     if (_distance < 0.5) then {
-        _cutter = "Land_ClutterCutter_medium_F";
+        _cutter = "Land_ClutterCutter_large_F";
     };
 
     createVehicle [_cutter, _intersectPosASL, [], 0, "CAN_COLLIDE"]
 } else {
-    // If not terrain, check for bushes
+// If not terrain, check for bushes
     if ((nearestTerrainObjects [_intersectObj, ["Bush"], 0]) isNotEqualTo []) then {
         // Destroy bush
         _intersectObj setDamage [1, true, _unit];
