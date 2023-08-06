@@ -9,13 +9,13 @@ Check if it's destroy tree or cut grass.
 * -
 
 * Example:
-* [player] call ClearTree_fnc_canClearTree
+* [player] call clearTree_fnc_canclearTree
 */
 
 params ["_player"];
 
 if (
-    ClearTree_requireAxe &&
+    clearTree_requireAxe &&
     {!("bunwell_axe" in (_player call ace_common_fnc_uniqueItems))}
 ) exitWith {false};
 if !([_player] call ace_common_fnc_canDig) exitWith {false};

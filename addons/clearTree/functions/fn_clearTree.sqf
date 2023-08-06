@@ -10,7 +10,7 @@
 * -
 *
 * Example:
-* [] call ClearTree_fnc_clearTree
+* [] call clearTree_fnc_clearTree
 */
 
 private _position0 = AGLToASL positionCameraToWorld [0, 0, 0]; 
@@ -34,7 +34,7 @@ if (_intersectObj isEqualTo objNull && {_parentObject isEqualTo objNull}) then {
         _intersectObj setDamage 1;
             
             
-        if (ClearTree_hidetree) then 
+        if (clearTree_hidetree) then 
         {
         [_intersectObj] spawn 
                 {

@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class ClearTree {
+    class clearTree {
         name = COMPONENT;
         units[] = {};
         weapons[] = {};
@@ -14,19 +14,19 @@ class CfgPatches {
 };
 
 class Extended_PreInit_EventHandlers {
-    class ClearTree {
-        init = "call compile preprocessFileLineNumbers 'ClearTree\initSettings.sqf'";
+    class clearTree {
+        init = "call compile preprocessFileLineNumbers 'clearTree\initSettings.sqf'";
     };
 };
 
 class CfgFunctions {
     class TF47 
     {
-        class ClearTree
+        class clearTree
         {
-            file = "z\TF47\addons\ClearTree\functions";
+            file = "z\TF47\addons\clearTree\functions";
             class clearTree;
-            class canClearTree;
+            class canclearTree;
         };
     };
 };
@@ -47,7 +47,7 @@ class CfgWeapons {
         displayName="Axe";
         scope=2;
         author="Rabbit";
-        picture="z\TF47\addons\ClearTree\textures\Axe_Icon.paa";
+        picture="z\TF47\addons\clearTree\textures\Axe_Icon.paa";
         ACE_Attachable = "Land_Axe_F";
         model = "\A3\Structures_F\Items\Tools\Axe_F.p3d";
         icon="iconObject_circle";
@@ -65,14 +65,14 @@ class CfgVehicles {
     class CAManBase: Man {
         class ACE_SelfActions {
             class ACE_Equipment {
-                class ClearTree {
+                class clearTree {
                     displayName = "Cut Tree";
-                    condition = "[_player] call TF47_fnc_canClearTree";
+                    condition = "[_player] call TF47_fnc_canclearTree";
                     //wait a frame to handle "Do When releasing action menu key" option
                     statement = "[{[] call TF47_fnc_clearTree},[]] call CBA_fnc_execNextFrame";
                     exceptions[] = {};
                     showDisabled = 0;
-                    icon = "z\TF47\addons\ClearTree\textures\Axe_Icon_White.paa";
+                    icon = "z\TF47\addons\clearTree\textures\Axe_Icon_White.paa";
                 };
             };
         };
