@@ -1,0 +1,4 @@
+//<'Bunwell_Cleartree.pbo' properties via Mikero's dos tools, dll version 9.10>
+prefix=ClearTree;
+//PboType=Arma Addon;
+//</properties>
