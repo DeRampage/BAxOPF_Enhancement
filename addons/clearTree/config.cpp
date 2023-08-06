@@ -13,12 +13,6 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class clearTree {
-        init = "call compile preprocessFileLineNumbers 'clearTree\initSettings.sqf'";
-    };
-};
-
 class CfgFunctions {
     class TF47 
     {
