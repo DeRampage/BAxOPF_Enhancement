@@ -1,14 +1,15 @@
-#include "BIS_AddonInfo.hpp"
+#include "script_component.hpp"
+
 class CfgPatches {
     class ClearTree {
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
-        requiredVersion = 2.0;
+        requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"ace_common"};
-        version = 2.0.1;
-        versionStr = 2.0.1;
-        versionAr[] = {2, 0, 1};
-        author = "Ampersand, Rabbit";
+        author = "Ampersand";
+        authors[] = {"Ampersand","Rabbit","Rampage"};
+        VERSION_CONFIG;
     };
 };
 
@@ -19,7 +20,15 @@ class Extended_PreInit_EventHandlers {
 };
 
 class CfgFunctions {
-    #include "functions\CfgFunctions.hpp"
+    class TF47 
+    {
+        class ClearTree
+        {
+            file = "z\TF47\addons\ClearTree\functions";
+            class clearBrush;
+            class canClearBrush;
+        };
+    };
 };
 
 class CfgWeapons {
@@ -50,9 +59,6 @@ class CfgWeapons {
     };
 };
 
-
-
-
 class CfgVehicles {
     
     class Man;
@@ -66,9 +72,11 @@ class CfgVehicles {
                     statement = "[{[] call ClearTree_fnc_clearTree},[]] call CBA_fnc_execNextFrame";
                     exceptions[] = {};
                     showDisabled = 0;
-                    icon = "\ClearTree\textures\Axe_Icon_White.paa";
+                    icon = "z\TF47\addons\ClearTree\textures\Axe_Icon_White.paa";
                 };
             };
         };
     };
 };
+
+#include "CfgEventHandlers.hpp"
