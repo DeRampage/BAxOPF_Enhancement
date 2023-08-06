@@ -1,38 +1,49 @@
 #include "script_component.hpp"
 /*
-Author: Ampersand
-Check if it's destroy bush or cut grass.
+Author: Ampersand, johnb43
+Check if a local unit can destroy bush or cut grass.
 
 * Arguments:
-* 0: Unit trying to tag <OBJECT>
+* 0: Unit trying to clear brush <OBJECT>
+* If unit is a player, unit must be local.
 *
 * Return Value:
-* -
+* If unit can clear brush <BOOL>
 
 * Example:
-* [player] call TF47_fnc_canClearBrush
+* [player] call abc_main_fnc_canClearBrush
 */
 
-params ["_player"];
+params ["_unit"];
+
+if (!alive _unit) exitWith {false};
+if !([_unit, objNull, ["isNotDragging", "isNotCarrying", "isNotSwimming"]] call ace_common_fnc_canInteractWith) exitWith {false};
 
 if (
     ClearBrush_requireEntrenchingTool &&
-    {!("ACE_EntrenchingTool" in (_player call ace_common_fnc_uniqueItems))}
+    {!(_unit call ace_trenches_fnc_hasEntrenchingTool)}
 ) exitWith {false};
-if !([_player] call ace_common_fnc_canDig) exitWith {false};
 
-private _position0 = AGLToASL positionCameraToWorld [0, 0, 0];
-private _position1 = AGLToASL positionCameraToWorld [0, 0, 2];
+// Check if unit is a player
+private _isPlayer = isPlayer _unit;
 
-private _intersections = lineIntersectsSurfaces [_position0, _position1, cameraOn, objNull, true, 1, "VIEW"];
+if (_isPlayer && {!local _unit}) exitWith {false};
+
+private _startPos = if (_isPlayer) then {
+    AGLToASL positionCameraToWorld [0, 0, 0]
+} else {
+    eyePos _unit
+};
+
+// Check 2m in front of unit if there is an object
+private _intersections = lineIntersectsSurfaces [_startPos, _startPos vectorAdd ((getCameraViewDirection _unit) vectorMultiply 2), _unit];
 
 if (_intersections isEqualTo []) exitWith {false};
 
-(_intersections # 0) params ["_intersectPosASL", "_surfaceNormal", "_intersectObj", "_parentObject"];
+(_intersections # 0) params ["_intersectPosASL", "", "_intersectObj", "_parentObject"];
 
-//terrain
-if (_intersectObj isEqualTo objNull && {_parentObject isEqualTo objNull}) exitWith {true};
-//not terrain
-if !((nearestTerrainObjects [ _intersectObj , ["Bush"], 0]) isEqualTo [] ) exitWith {true};
+// Terrain
+if (isNull _intersectObj && {isNull _parentObject}) exitWith {true};
 
-false
+// If not terrain, check for bushes
+(nearestTerrainObjects [_intersectObj, ["Bush"], 0]) isNotEqualTo []
