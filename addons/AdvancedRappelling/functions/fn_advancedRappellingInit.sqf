@@ -853,7 +853,7 @@ AR_Hide_Object_Global = {
 AR_Add_Player_Actions = {
    params ["_player"];
 
-   _player addAction [localize "STR_TF47_Rappel_Rappel_AI", { 
+   _player addAction [localize "STR_TF47_AdvancedRappelling_Rappel_AI", { 
       {
          if(!isPlayer _x) then {
             sleep 1;
@@ -871,7 +871,7 @@ AR_Add_Player_Actions = {
 // add self interact actions
 private _rappelAction  = [
     "rappelAction",
-    localize "STR_TF47_Rappel_Rappel_Self",
+    localize "STR_TF47_AdvancedRappelling_Rappel_Self",
     "\z\ace\addons\fastroping\ui\icon_waypoint.paa",
     {
         [player, vehicle player] call AR_Rappel_From_Heli_Action;
@@ -884,7 +884,7 @@ private _rappelAction  = [
 
 private _detachAction  = [
     "detachAction",
-    localize "STR_TF47_Rappel_Detach_Rappel_Device",
+    localize "STR_TF47_AdvancedRappelling_Detach_Rappel_Device",
     "\A3\ui_f\data\igui\cfg\actions\ico_OFF_ca.paa",
     {
         [player] call AR_Rappel_Detach_Action;

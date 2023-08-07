@@ -14,7 +14,7 @@
     [{
         // TODO animation
         [
-            localize "STR_TF47_doing",
+            localize "STR_TF47_Unflipping_doing",
             // time
             _this#2,
             // condition
@@ -58,7 +58,7 @@
 // Add ACE3 or Vanilla actions to vehicles
 if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
 
-    private _unflipAction = ["TF47_unflip", localize "STR_TF47_act", "\a3\3den\data\attributes\loiterdirection\cw_ca.paa",
+    private _unflipAction = ["TF47_unflip", localize "STR_TF47_Unflipping_act", "\a3\3den\data\attributes\loiterdirection\cw_ca.paa",
         {
             _target call TF47_fnc_unflipAction;
         },
