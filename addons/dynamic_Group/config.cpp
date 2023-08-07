@@ -1,16 +1,14 @@
 #include "script_component.hpp"
 
-class CfgPatches
-{
-    class dynamic_Group
-    {
-        author = "Sonic";
-        name = "TF47 DynGrp";
-        requiredVersion = 1.0;
-        requiredAddons[] = {"A3_Ui_F","cba_common"};
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"A3_Ui_F","cba_common"};
         authors[] = {"Sonic"};
+        VERSION_CONFIG;
     };
 };
  

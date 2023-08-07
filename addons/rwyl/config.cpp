@@ -2,14 +2,14 @@
 
 class CfgPatches {
     class ADDON {
-        name = "Ride Where You Look";
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
-        requiredVersion = 0.0.1;
+        requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"cba_common"};
-        author = "Ampersand";
-        authors[] = {"Ampersand"};
-        authorUrl = "https://github.com/ampersand38/rwyl";
+        authors[] = {"Ampersand","Rampage"};
+        authorUrl = "https://github.com/ampersand38/dwyl";
+        VERSION_CONFIG;
     };
 };
 

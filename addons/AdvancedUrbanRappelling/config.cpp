@@ -1,14 +1,16 @@
-#include "script_components.hpp"
-class CfgPatches
-{
-        class TF47_AdvancedUrbanRappelling
-        {
-                units[] = {"TF47_AdvancedUrbanRappelling"};
-                requiredVersion = 1.0;
-                requiredAddons[] = {"A3_Modules_F","cba_main"};
-        };
-};
+#include "script_component.hpp"
 
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"CBA_Extended_EventHandlers","CBA_MAIN"};
+        author[] = {"sethduda","Rampage"};
+        VERSION_CONFIG;
+    };
+};
 class CfgNetworkMessages
 {
         

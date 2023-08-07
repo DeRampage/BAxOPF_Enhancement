@@ -3,12 +3,12 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT;
-        author = "Gruppe Adler";
-        url = "https://gruppe-adler.de";
-        requiredVersion = 1.0;
-        requiredAddons[] = {"TF47_main", "cba_settings"};
         units[] = {};
         weapons[] = {};
+        requiredVersion = 1.0;
+        requiredAddons[] = {"TF47_main", "cba_settings"};
+        author = "Gruppe Adler";
+        url = "https://gruppe-adler.de";
         VERSION_CONFIG;
     };
 };

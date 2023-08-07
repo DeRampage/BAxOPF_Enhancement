@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
-    <Package name="AR_AdvancedRappelling">
-        <Key ID="STR_TF47_Rappel_Rappel_Self">
+    <Package name="AdvancedRappelling">
+        <Key ID="STR_TF47_AdvancedRappelling_Rappel_Self">
             <English>Rappel Self</English>
             <Russian>Спуститься по тросу</Russian>
             <Spanish>Rapelar</Spanish>
             <German>Abseilen</German>
             <Turkish>Iple Sark</Turkish>
         </Key>
-        <Key ID="STR_TF47_Rappel_Detach_Rappel_Device">
+        <Key ID="STR_TF47_AdvancedRappelling_Detach_Rappel_Device">
             <English>Detach Rappel Device</English>
             <Russian>Отцепить трос</Russian>
             <Spanish>Separar dispositivo Rappel</Spanish>
             <German>Abseilgerät lösen</German>
             <Turkish>Ipi Cöz</Turkish>
         </Key>
-        <Key ID="STR_TF47_Rappel_Rappel_AI">
+        <Key ID="STR_TF47_AdvancedRappelling_Rappel_AI">
             <English>Rappel AI Units</English>
             <Russian>Спустить по тросу AI</Russian>
             <Spanish>Rapelar en unidad</Spanish>

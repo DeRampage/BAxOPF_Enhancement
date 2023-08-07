@@ -2,7 +2,7 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT_NAME;
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

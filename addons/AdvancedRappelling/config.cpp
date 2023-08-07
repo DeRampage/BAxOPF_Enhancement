@@ -1,10 +1,14 @@
-class CfgPatches
+#include "script_component.hpp"
+class CfgPatches 
 {
-   class AR_AdvancedRappelling
+   class ADDON 
    {
-      units[] = {"AR_AdvancedRappelling"};
-      requiredVersion = 1.0;
+      units[] = {};
+      weapons[] = {};
+      requiredVersion = REQUIRED_VERSION;
       requiredAddons[] = {"A3_Modules_F"};
+      author[] = {"sethduda","Rampage"};
+      VERSION_CONFIG;
    };
 };
 

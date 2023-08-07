@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class AMP_Breaching_Charge {
-        name = COMPONENT_NAME;
+    class ADDON {
+        name = COMPONENT;
         units[] = {"AMP_Breaching_Charge","AMP_Breaching_Charge_Place","AMP_Door_Wedge_Place"};
         weapons[] = {"AMP_Breaching_Charge_Muzzle"};
         requiredVersion = REQUIRED_VERSION;
@@ -11,8 +11,7 @@ class CfgPatches {
             "ace_interaction",
             "ace_explosives"
         };
-        author = "Ampersand";
-        authors[] = {"Ampersand"};
+        authors[] = {"Ampersand","Rampage"};
         authorUrl = "https://github.com/ampersand38/";
         VERSION_CONFIG;
     };
