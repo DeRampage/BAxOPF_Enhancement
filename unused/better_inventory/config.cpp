@@ -38,14 +38,14 @@ class Extended_InventoryOpened_EventHandlers {
         BetterInventory_EH = "[] call TF47_fnc_InventoryOpened";
     };
 };
-
+/*
 class Extended_InventoryClosed_EventHandlers {
     class CAManBase
     {
 //        BetterInventory_EH = "[] call TF47_fnc_ChangeInventoryClosed";
     };
 };
-
+*/
 class Extended_Put_EventHandlers {
     class CAManBase
     {
