@@ -1,0 +1,1 @@
+_this remoteExec ["TF47_fnc_AUR_Play_Rappelling_Sounds", 0];
