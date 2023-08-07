@@ -1,3 +1,4 @@
+#include "TF47_AUR_MACROS.h" //nur solang wie ben�tigt
 /*
 *   Author: Tirpitz
 *
@@ -21,8 +22,6 @@ drawIcon3D ["targetIcon.paa", [1,1,1,1], ASLToAGL getPosASL cursorTarget, 1, 1, 
 }];
 *
 */
-
-#include "TF47_AUR_MACROS.h" //nur solang wie ben�tigt
 
 //params ["_player",["_playerStartingOnGround",false]];
 params ["_player","_playerPreRappelPosition","_rappelPoint","_rappelDirection","_ropeLength",["_playerStartingOnGround",false]];

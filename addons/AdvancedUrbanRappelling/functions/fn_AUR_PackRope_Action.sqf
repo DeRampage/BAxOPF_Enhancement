@@ -1,11 +1,9 @@
+#include "TF47_AUR_MACROS.h"
 /*
 *   Author: Tirpitz
 *   Packs up rope and places item on ground if rope items present
 
 */
-
-#include "TF47_AUR_MACROS.h"
-
 
 params [["_player", player]];
 _length = AUR_GET_ROPE_LENGTH(_player);

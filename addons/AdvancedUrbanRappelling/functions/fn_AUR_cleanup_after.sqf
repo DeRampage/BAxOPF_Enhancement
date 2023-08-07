@@ -1,9 +1,10 @@
+#include "TF47_AUR_MACROS.h"
+
 /*
 * Author Tirpitz
 * Cleans up after a rappel detach (either by detach rappel device action or climb to top)
 *   params: _player, the unit to disconnect from the system.
 */
-#include "TF47_AUR_MACROS.h"
 
 params ["_player"];
 diag_log "Cleanup_after";

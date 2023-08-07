@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 /*
  * Author: -Sonic-
  * Update Grouptraker.
@@ -17,7 +19,6 @@
  component = dynamic_Group
  */
  
-#include "script_component.hpp"
 #define mkr_inf ["b_inf", "b_recon","b_motor_inf","b_mech_inf"]
 #define mkr_support ["b_hq","b_med","b_support","b_maint","b_installation", "b_antiair", "b_air"]
 #define mkr_attack ["b_armor","b_art","b_mortar","b_att_air","b_plane","b_naval","b_plane_cas","b_plane_cap", "b_plane_sead","b_plane_multi","b_plane_cargo"]

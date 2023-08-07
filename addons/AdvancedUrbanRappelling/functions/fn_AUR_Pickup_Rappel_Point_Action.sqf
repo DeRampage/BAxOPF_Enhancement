@@ -1,3 +1,4 @@
+#include "TF47_AUR_MACROS.h"
 /*
 * Author: Tirpitz
 * 
@@ -7,10 +8,6 @@
 *
 * Example [_player] call TF47_fnc_AUR_Pickup_Rappel_Point_Action;
 */
-
-
-
-#include "TF47_AUR_MACROS.h"
 
 params ["_player"];
 
