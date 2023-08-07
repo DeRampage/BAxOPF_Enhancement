@@ -1,13 +1,15 @@
 #include "script_component.hpp"
 
-class CfgPatches {
+class CfgPatches
+{
     class ADDON {
-        name = COMPONENT;
-        author = "TF47 Desty";
-        version[] = { 2, 3, 0, -1 }; //Negative last digit indicates alpha/beta
-        requiredAddons[] = {"ace_interact_menu", "ace_medical", "ace_medical_treatment", "cba_settings"};
+        name = COMPONENT;        
         units[] = {};
         weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"ace_interact_menu", "ace_medical", "ace_medical_treatment", "cba_settings"};
+        authors[] = {"Jack Napier", "Desty","Rampage"};
+        VERSION_CONFIG;
     };
 };
 
