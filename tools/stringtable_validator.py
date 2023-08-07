@@ -54,7 +54,7 @@ def check_stringtable(filepath):
             errors += 1
 
         if package_name.lower() != os.path.basename(os.path.dirname(filepath)):
-            print("  ERROR: Package name attribute '{}' does not match the component folder name '{}'.".format(package_name, os.path.basename(os.path.dirname(filepath))))
+            print("  ERROR: Package name attribute '{}' does not match the component folder name '{}'.".format(package_name,filepath))
             errors += 1
 
         # Get all keys contained in the stringtable

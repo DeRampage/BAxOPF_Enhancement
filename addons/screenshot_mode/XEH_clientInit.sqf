@@ -6,7 +6,7 @@ if(!hasInterface) exitWith {};
 GVAR(active) = false;
 
 [
-    localize "STR_TF47_Screenshot_mode",
+    localize "STR_TF47_Screenshot_mode_title",
     QGVAR(toggle),
     localize "STR_TF47_Screenshot_mode_Toggle",
     {
