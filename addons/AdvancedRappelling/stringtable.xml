@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
-    <Package name="Advandced_Rappeling">
+    <Package name="AR_AdvancedRappelling">
         <Key ID="STR_TF47_Rappel_Rappel_Self">
             <English>Rappel Self</English>
             <Russian>Спуститься по тросу</Russian>
@@ -24,4 +24,3 @@
         </Key>
     </Package>
 </Project>
- 

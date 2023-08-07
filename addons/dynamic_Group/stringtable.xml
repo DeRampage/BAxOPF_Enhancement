@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="TF47_Clientmod">
-    <Package name="Main">
-        <Key ID="STR_selInsi">
+<Project name="TF47">
+    <Package name="dynamic_Group">
+        <Key ID="STR_TF47_dynamic_Group_selInsi">
             <English>Change Insigna</English>
             <German>Wechsle Insigna</German>
         </Key>
-        <Key ID="STR_setRole">
+        <Key ID="STR_TF47_dynamic_Group_setRole">
             <English>Set Group Info</English>
             <German>Gruppeninfos definieren</German>
         </Key>
-        <Key ID="STR_Freq">
+        <Key ID="STR_TF47_dynamic_Group_Freq">
             <English>Frequency:</English>
             <German>Frequenz:</German>
         </Key>
-        <Key ID="STR_Uniform">
+        <Key ID="STR_TF47_dynamic_Group_Uniform">
             <English>Uniform:</English>
             <German>Uniform:</German>
         </Key>
-        <Key ID="STR_A3_CfgMarkers_NATO_att_air">
+        <Key ID="STR_TF47_dynamic_Group_A3_CfgMarkers_NATO_att_air">
             <English>Attack Chopper</English>
             <German>Attack Helicopter</German>
         </Key>
-        <Key ID="STR_SetGroupData">
+        <Key ID="STR_TF47_dynamic_Group_SetGroupData">
             <English>Set Group Data</English>
             <German>Gruppe einstellungen</German>
         </Key>
-        <Key ID="STR_IntFreq">
+        <Key ID="STR_TF47_dynamic_Group_IntFreq">
             <English>Internal Frequency</English>
             <German>Intern Frequenz</German>
         </Key>
-        <Key ID="STR_Apply">
+        <Key ID="STR_TF47_dynamic_Group_Apply">
             <English>Apply</English>
             <German>Anwenden</German>
         </Key>
-        <Key ID="STR_Cancel">
+        <Key ID="STR_TF47_dynamic_Group_Cancel">
             <English>Cancel</English>
             <German>Abbrechen</German>
         </Key>
-        <Key ID="STR_Role">
+        <Key ID="STR_TF47_dynamic_Group_Role">
             <English>Role:</English>
             <German>Funktion:</German>
         </Key>
-        <Key ID="STR_TTintFreq">
+        <Key ID="STR_TF47_dynamic_Group_TTintFreq">
             <English>Set your Internal Frequency</English>
             <German>Stell deine Interne Frequenz ein</German>
         </Key>
-        <Key ID="STR_TTintRole">
+        <Key ID="STR_TF47_dynamic_Group_TTintRole">
             <English>Set your Role</English>
             <German>Stell deine Funktion ein</German>
         </Key>

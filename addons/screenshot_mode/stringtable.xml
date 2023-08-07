@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
-    <Package name="GRAD Screenshot Mode">
-        <Key ID="STR_TF47_Screenshot_Mode">
+    <Package name="screenshot_mode">
+        <Key ID="STR_TF47_screenshot_mode">
             <English>GRAD Screenshot Mode</English>
             <German>GRAD Screenshot Modus</German>
         </Key>
-        <Key ID="STR_TF47_Screenshot_Mode_Toggle">
+        <Key ID="STR_TF47_screenshot_mode_Toggle">
             <English>Toggle Screenshot Mode</English>
             <German>Screenshot Modus umschalten</German>
         </Key>
     </Package>
 </Project>
- 

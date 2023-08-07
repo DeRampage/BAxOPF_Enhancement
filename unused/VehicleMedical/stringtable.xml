@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="TF47_AVM">
-    <Package name="Interaction">
+<Project name="TF47">
+    <Package name="AVM">
         <Key ID="STR_TF47_AVM_Interaction_Medical">
             <English>Medical</English>
             <Chinesesimp>医疗</Chinesesimp>
@@ -41,8 +41,6 @@
         <Key ID="STR_TF47_AVM_Incapacitated_Unload_Force">
             <English>Force Unload</English>
         </Key>
-    </Package>
-    <Package name="Unstable">
         <Key ID="STR_TF47_AVM_Unstable_Dead">
             <English>Deceased</English>
             <Chinesesimp>已阵亡</Chinesesimp>
@@ -115,8 +113,6 @@
                 <English>Airway Blocked</English>
             </Key>
         </Container>
-    </Package>
-    <Package name="Stable">
         <Key ID="STR_TF47_AVM_Stable_Bandage">
             <English>Bandage (%1)</English>
             <Chinesesimp>包扎 (%1)</Chinesesimp>
@@ -157,8 +153,6 @@
             <English>Tourniquets (%1)</English>
             <Chinesesimp>止血带 (%1)</Chinesesimp>
         </Key>
-    </Package>
-    <Package name="Settings">
         <Key ID="STR_TF47_AVM_Settings_Addon_Name">
             <English>TF47 Vehicle Medical</English>
         </Key>
