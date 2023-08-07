@@ -19,4 +19,3 @@
 #include "script_xeh.hpp"
 
 #define AUR_DEFAULT_ROPE_LENGTH 60
-
