@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
-    <Package name="AUR">
+    <Package name="AdvancedUrbanRappelling">
         <Key ID="STR_TF47_AUR_Rappel_Self">
             <English>Rappel Self</English>
             <German>Abseilen</German>
