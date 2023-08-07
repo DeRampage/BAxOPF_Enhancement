@@ -1,2 +1,0 @@
-#include "TF47_AUR_MACROS.h"
-AUR_GET_STATUS_HOLDING_ROPE(player);
