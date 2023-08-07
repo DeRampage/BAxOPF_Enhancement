@@ -1,4 +1,4 @@
-    class bettinv_main_exile
+    class COMPONENT_EXILE
     {
         name = "Better Inventory Ace Compat";
         units[] = {};

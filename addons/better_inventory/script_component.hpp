@@ -1,4 +1,6 @@
 #define COMPONENT better_inventory
+#define COMPONENT_ACE better_inventory_ace
+#define COMPONENT_EXILE better_inventory_exile
 #include "\z\TF47\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL

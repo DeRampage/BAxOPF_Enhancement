@@ -1,4 +1,4 @@
-    class bettinv_main_ace
+    class COMPONENT_ACE
     {
         name = "Better Inventory Ace Compat";
         units[] = {};

@@ -12,14 +12,9 @@ class CfgPatches
         author[] = {"Xaneas","Rampage"};
         VERSION_CONFIG;
     };
+
+    #include "compat_ace.hpp"
     
-    #if __has_include("\z\ace\addons\inventory\script_component.hpp")
-        #include "compat_ace.hpp"
-    #endif
-    
-    #if __has_include("\exile_client\bootstrap\fn_postInit.sqf")
-        #include "compat_exile.hpp"
-    #endif
 };
 
 class CfgFunctions {
@@ -679,13 +674,14 @@ class RscDisplayInventory {
             y = "safeZoneY + safeZoneH * 0.24444445";
             w = "safeZoneW * 0.025";
             h = "safeZoneH * 0.03888889";
-        };
-        
-    //// Radio ////
+        };        
 
+    //// Radio ////
+    /*
         #if __has_include("\idi\acre\addons\main\script_component.hpp")
         
         #else
+    */
         class BI_Background_Radio: BI_Background_Base
         {
             idc = 8883;
@@ -702,7 +698,9 @@ class RscDisplayInventory {
             w = "safeZoneW * 0.025";
             h = "safeZoneH * 0.03888889";
         };
+    /*
         #endif
+    */
     //// Compass ////
         class BI_Background_Compass: BI_Background_Base
         {
@@ -1224,6 +1222,7 @@ class RscDisplayInventory {
         };
         
     //// Radio ////
+    /*
         #if __has_include("\idi\acre\addons\main\script_component.hpp")
         class SlotRadio: SlotPrimary
         {
@@ -1231,6 +1230,7 @@ class RscDisplayInventory {
             h = "0";
         };
         #else
+    */
         class SlotRadio: SlotPrimary
         {
             //idc = 6214;
@@ -1240,8 +1240,9 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.03888889";
             colorBackground[] = {1,1,1,0.1};
         };
+    /*
         #endif
-        
+    */    
     //// Compass ////
         class SlotCompass: SlotPrimary
         {
@@ -1292,9 +1293,11 @@ class RscDisplayInventory {
         };
         
     //// Exile compat ////
+        /*
         #if __has_include("\exile_client\bootstrap\fn_postInit.sqf")
             #include "compat_exile_RscDisplayInventory.hpp"
         #endif
+        */
     };
 
 };
