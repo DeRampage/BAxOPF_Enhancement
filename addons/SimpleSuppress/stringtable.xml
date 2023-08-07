@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
     <Package name="SimpleSuppress">
-            <Key ID="STR_TF47_SimpleSuppress_main_URL">
+        <Key ID="STR_TF47_SimpleSuppress_main_URL">
             <English>https://github.com/SzwedzikPL/SimpleSuppress</English>
             <French>https://github.com/SzwedzikPL/SimpleSuppress</French>
             <Spanish>https://github.com/SzwedzikPL/SimpleSuppress</Spanish>

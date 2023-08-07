@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
-    <Package name="slingLoad">
-        <Key ID="STR_TF47_slingload_Rigging">
+    <Package name="SlingLoad">
+        <Key ID="STR_TF47_SlingLoad_Rigging">
             <English>TF47 Sling Load Rigging</English>
             <German>TF47 Außenlast</German>
         </Key>
-        <Key ID="STR_TF47_slingload_AttachCargo">
+        <Key ID="STR_TF47_SlingLoad_AttachCargo">
             <English>Attach Cargo</English>
             <Chinesesimp>挂载货物</Chinesesimp>
             <German>Last Anhängen</German>
         </Key>
-        <Key ID="STR_TF47_slingload_ReleaseCargo">
+        <Key ID="STR_TF47_SlingLoad_ReleaseCargo">
             <English>Release Cargo</English>
             <Chinesesimp>卸载货物</Chinesesimp>
             <German>Last abwerfen</German>
         </Key>
-        <Key ID="STR_TF47_slingload_CargoHookNameMain">
+        <Key ID="STR_TF47_SlingLoad_CargoHookNameMain">
             <English>Main</English>
             <Chinesesimp>主货勾</Chinesesimp>
             <German>Mittlerer Lasthaken</German>
         </Key>
-        <Key ID="STR_TF47_slingload_CargoHookNameForward">
+        <Key ID="STR_TF47_SlingLoad_CargoHookNameForward">
             <English>Forward</English>
             <Chinesesimp>前货勾</Chinesesimp>
             <German>Vorderer Lasthaken</German>
         </Key>
-        <Key ID="STR_TF47_slingload_CargoHookNameAft">
+        <Key ID="STR_TF47_SlingLoad_CargoHookNameAft">
             <English>Aft</English>
             <Chinesesimp>后货勾</Chinesesimp>
             <German>Hinterer Lasthaken</German>
         </Key>
-        <Key ID="STR_TF47_slingload_RigForSlingLoad">
+        <Key ID="STR_TF47_SlingLoad_RigForSlingLoad">
             <English>Rig For Sling Load</English>
             <Chinesesimp>吊装索具</Chinesesimp>
             <German>Lastgeschirr anbringen</German>
         </Key>
-        <Key ID="STR_TF47_slingload_AutoRig">
+        <Key ID="STR_TF47_SlingLoad_AutoRig">
             <English>Auto Rig</English>
             <Chinesesimp>自动安装吊钩</Chinesesimp>
             <German>Automatisches Geschirr</German>
         </Key>
-        <Key ID="STR_TF47_slingload_ManualRig">
+        <Key ID="STR_TF47_SlingLoad_ManualRig">
             <English>Manual Rig</English>
             <Chinesesimp>手动安装吊钩</Chinesesimp>
             <German>Manuelles Geschirr</German>
         </Key>
-        <Key ID="STR_TF47_slingload_AdjustRigging">
+        <Key ID="STR_TF47_SlingLoad_AdjustRigging">
             <English>Adjust Rigging</English>
             <Chinesesimp>调整吊钩</Chinesesimp>
             <German>Geschirr anpassen</German>
         </Key>
-        <Key ID="STR_TF47_slingload_AdjustRiggingAll">
+        <Key ID="STR_TF47_SlingLoad_AdjustRiggingAll">
             <English>All</English>
             <Chinesesimp>整体调整</Chinesesimp>
             <German>Alle</German>
         </Key>
-        <Key ID="STR_TF47_slingload_AdjustRiggingSingle">
+        <Key ID="STR_TF47_SlingLoad_AdjustRiggingSingle">
             <English>Single</English>
             <Chinesesimp>逐个调整</Chinesesimp>
             <German>Einzeln</German>
         </Key>
-        <Key ID="STR_TF47_slingload_RemoveRigging">
+        <Key ID="STR_TF47_SlingLoad_RemoveRigging">
             <English>Remove Rigging</English>
             <Chinesesimp>移除吊钩</Chinesesimp>
             <German>Geschirr entfernen</German>
         </Key>
-        <Key ID="STR_TF47_slingload_SlingLoadApexFitting">
+        <Key ID="STR_TF47_SlingLoad_SlingLoadApexFitting">
             <English>Sling Load Apex Fitting</English>
             <Chinesesimp>吊挂顶尖适配</Chinesesimp>
             <German>Lastschlaufe</German>
         </Key>
-        <Key ID="STR_TF47_slingload_SlingLoadHook">
+        <Key ID="STR_TF47_SlingLoad_SlingLoadHook">
             <English>Sling Load Hook</English>
             <Chinesesimp>吊钩</Chinesesimp>
             <German>Lasthaken</German>
         </Key>
-        <Key ID="STR_TF47_slingload_WreckDummy">
+        <Key ID="STR_TF47_SlingLoad_WreckDummy">
             <English>Wreck Dummy</English>
         </Key>
-        <Key ID="STR_TF47_slingload_AddLiftPoint">
+        <Key ID="STR_TF47_SlingLoad_AddLiftPoint">
             <English>Add Lift Point</English>
             <Chinesesimp>安装吊钩</Chinesesimp>
             <German>Haken anbringen</German>
         </Key>
-        <Key ID="STR_TF47_slingload_LengthenShorten">
+        <Key ID="STR_TF47_SlingLoad_LengthenShorten">
             <English>Lengthen/Shorten</English>
             <Chinesesimp>伸长/缩短</Chinesesimp>
             <German>Verlängern/Verkürzen</German>
