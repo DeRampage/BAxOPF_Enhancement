@@ -9,7 +9,7 @@ on:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout the source code
-      uses: actions/checkout@master
+          uses: actions/checkout@master
         - name: Validate SQF
           run: python3 tools/sqf_validator.py
         - name: Validate Config
