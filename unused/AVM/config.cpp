@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class COMPONENT {
+    class ADDON {
         name = COMPONENT;
         author = "TF47 Desty";
         version[] = { 2, 3, 0, -1 }; //Negative last digit indicates alpha/beta

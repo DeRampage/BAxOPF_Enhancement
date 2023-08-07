@@ -1,7 +1,7 @@
 class CfgPatches
 {
-    class unflipping
-    {
+    class ADDON {
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.90;
