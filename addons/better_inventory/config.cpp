@@ -12,12 +12,13 @@ class CfgPatches
         author[] = {"Xaneas","Rampage"};
         VERSION_CONFIG;
     };
-
-    #include "compat_ace.hpp"
+    
+        #include "compat_ace.hpp"
     
 };
 
-class CfgFunctions {
+class CfgFunctions 
+{
     class TF47 
     {
         class better_inventory
@@ -28,7 +29,6 @@ class CfgFunctions {
         };
     };
 };
-
 
 #include "CfgEventHandlers.hpp"
 
@@ -85,9 +85,9 @@ class BI_Frame_Base: RscFrame
     colorBackground[] = {1.0,1.0,1.0,1.0}; //{1.0,1.0,1.0,0.25};
 };
 
-//#include "RscDisplayInventory.hpp"
-
-class RscDisplayInventory {
+class RscDisplayInventory
+{
+/////////////////////////////////////////// Background Controls ///////////////////////////////////////////
     class ControlsBackground
     {
         class BI_Background: RscText
@@ -109,7 +109,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.68888889";
         };
         
-    //// Banner ////
+//// Banner ////
         
         class BI_Banner_Frame: RscFrame
         {
@@ -120,8 +120,8 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02222223";
         };
         
-    //// Ground Box ////
-    /*
+//// Ground Box ////
+/*
         class BI_Cargo_Tab_Frame: RscFrame
         {
             idc = 8851;
@@ -148,7 +148,7 @@ class RscDisplayInventory {
             w = "safeZoneW * 0.1625";
             h = "safeZoneH * 0.02777778";
         };
-    */        
+*/        
         class BI_Frame_Ground_Box: BI_Frame_Base
         {
             idc = 8801;
@@ -158,7 +158,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.425";
         };
         
-    //// Uniform Box ////
+//// Uniform Box ////
         class BI_Frame_Uniform_Box: BI_Frame_Base
         {
             idc = 8802;
@@ -168,7 +168,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.425";
         };
         
-    //// Vest Box ////
+//// Vest Box ////
         class BI_Frame_Vest_Box: BI_Frame_Base
         {
             idc = 8803;
@@ -178,7 +178,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.425";
         };
         
-    //// Backpack Box ////
+//// Backpack Box ////
         class BI_Frame_Backpack_Box: BI_Frame_Base
         {
             idc = 8804;
@@ -188,7 +188,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.425";
         };
         
-    //// Primary ////
+//// Primary ////
         class BI_Background_Primary: BI_Background_Base
         {
             idc = 8855;
@@ -308,7 +308,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.03333334";
         };
         
-    //// Launcher ////
+//// Launcher ////
         class BI_Background_Launcher: BI_Background_Base
         {
             idc = 8862;
@@ -411,7 +411,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.03333334";
         };
         
-    //// Secondary ////
+//// Secondary ////
         class BI_Background_Secondary: BI_Background_Base
         {
             idc = 8868;
@@ -514,7 +514,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.03333334";
         };
         
-    //// Uniform ////
+//// Uniform ////
         class BI_Background_Uniform: BI_Background_Base
         {
             idc = 8874;
@@ -532,7 +532,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.06574075";
         };
         
-    //// Vest ////
+//// Vest ////
         class BI_Background_Vest: BI_Background_Base
         {
             idc = 8875;
@@ -550,7 +550,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.06574075";
         };
 
-    //// Backpack ////
+//// Backpack ////
         class BI_Background_Backpack: BI_Background_Base
         {
             idc = 8876;
@@ -568,7 +568,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.06574075";
         };
         
-    //// Helmet ////
+//// Helmet ////
         class BI_Background_Helmet: BI_Background_Base
         {
             idc = 8877;
@@ -586,7 +586,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.06574075";
         };
         
-    //// Facewear ////
+//// Facewear ////
         class BI_Background_Facewear: BI_Background_Base
         {
             idc = 8878;
@@ -604,7 +604,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.06574075";
         };
         
-    //// NVG ////
+//// NVG ////
         class BI_Background_NVG: BI_Background_Base
         {
             idc = 8879;
@@ -622,7 +622,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.06574075";
         };
         
-    //// Binocular ////
+//// Binocular ////
         class BI_Background_Binocular: BI_Background_Base
         {
             idc = 8880;
@@ -640,7 +640,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.06574075";
         };
         
-    //// Map ////
+//// Map ////
         class BI_Background_Map: BI_Background_Base
         {
             idc = 8881;
@@ -658,7 +658,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.03888889";
         };
         
-    //// GPS ////
+//// GPS ////
         class BI_Background_GPS: BI_Background_Base
         {
             idc = 8882;
@@ -674,9 +674,9 @@ class RscDisplayInventory {
             y = "safeZoneY + safeZoneH * 0.24444445";
             w = "safeZoneW * 0.025";
             h = "safeZoneH * 0.03888889";
-        };        
-
-    //// Radio ////
+        };
+        
+//// Radio ////
     /*
         #if __has_include("\idi\acre\addons\main\script_component.hpp")
         
@@ -701,7 +701,7 @@ class RscDisplayInventory {
     /*
         #endif
     */
-    //// Compass ////
+//// Compass ////
         class BI_Background_Compass: BI_Background_Base
         {
             idc = 8884;
@@ -719,7 +719,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.03888889";
         };
         
-    //// Clock ////
+//// Clock ////
         class BI_Background_Clock: BI_Background_Base
         {
             idc = 8885;
@@ -737,11 +737,11 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.03888889";
         };
     };
-    /////////////////////////////////////////// Controls ///////////////////////////////////////////
+/////////////////////////////////////////// Controls ///////////////////////////////////////////
     class controls
     {
         
-    //// Top Banner Background Line ////
+//// Top Banner Background Line ////
         class TitleBackground: RscText
         {
             //idc = 1020;
@@ -751,7 +751,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02222223";
         };
         
-    //// Top Banner Rank Insigne Background ////
+//// Top Banner Rank Insigne Background ////
         class RankBackground: RscText
         {
             //idc = 1014;
@@ -761,7 +761,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02222223";
         };
 
-    //// Top Banner Rank Insigne Icon ////
+//// Top Banner Rank Insigne Icon ////
         class RankPicture: RscPicture
         {
             //idc = 1203;
@@ -771,7 +771,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02222223";
         };
 
-    //// Top Banner Player Name ////
+//// Top Banner Player Name ////
         class PlayersName: RscText
         {
             //idc = 111;
@@ -781,7 +781,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02222223";
         };
         
-    //// Top Banner Exit Button ////
+//// Top Banner Exit Button ////
         class ButtonBack: RscActiveText
         {
             //idc = 2;
@@ -791,7 +791,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02222223";
         };
         
-    //// Ground Itemlist Weight ////
+//// Ground Itemlist Weight ////
         class GroundLoad: RscProgress
         {
             //idc = 6307;
@@ -802,7 +802,7 @@ class RscDisplayInventory {
             colorFrame[] = {1,1,1,1};
         };
 
-    //// Ground Itemlist ////
+//// Ground Itemlist ////
         class GroundContainer: RscListBox
         {
             itemBackground[] = {1,1,1,0.2};
@@ -819,8 +819,8 @@ class RscDisplayInventory {
             w = "safeZoneW * 0.1625";
             h = "safeZoneH * 0.425";
         };
-
-    //// Ground Tab ////
+    
+//// Ground Tab ////
         class GroundTab: RscActiveText
         {
             //idc = 6321;
@@ -830,7 +830,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02777778";
         };
         
-    //// Cargo Container Tab ////
+//// Cargo Container Tab ////
         class SoldierTab: GroundTab
         {
             //idc = 6401;
@@ -840,7 +840,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02777778";
         };
         
-    //// Ground Filter Dropdown Menu ////
+//// Ground Filter Dropdown Menu ////
         class GroundFilter: RscCombo
         {
             //idc = 6554;
@@ -850,7 +850,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.02777778";
         };
         
-    //// Inventory White Selection ////
+//// Inventory White Selection ////
         class ContainerMarker: GroundTab
         {
             //idc = 6325;
@@ -860,7 +860,7 @@ class RscDisplayInventory {
             h = "0.736";
         };
         
-    //// Ground White Selection ////
+//// Ground White Selection ////
         class GroundMarker: ContainerMarker
         {
             //idc = 6385;
@@ -870,7 +870,7 @@ class RscDisplayInventory {
             h = "0.736";
         };
         
-    //// Total Weight ////
+//// Total Weight ////
         class TotalLoad: GroundLoad
         {
             //idc = 6308;
@@ -881,7 +881,7 @@ class RscDisplayInventory {
             colorFrame[] = {1,1,1,1};
         };
         
-    //// Primary ////
+//// Primary ////
         class SlotPrimary: GroundTab
         {
             //idc = 610;
@@ -947,7 +947,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Launcher ////
+//// Launcher ////
         class SlotSecondary: SlotPrimary
         {
             //idc = 611;
@@ -1003,7 +1003,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Secondary ////
+//// Secondary ////
         class SlotHandgun: SlotPrimary
         {
             //idc = 612;
@@ -1059,7 +1059,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Uniform ////
+//// Uniform ////
         class UniformSlot: SlotPrimary
         {
             //idc = 6331;
@@ -1070,7 +1070,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Uniform Weight ////
+//// Uniform Weight ////
         class UniformLoad: GroundLoad
         {
             //idc = 6304;
@@ -1081,7 +1081,7 @@ class RscDisplayInventory {
             colorFrame[] = {1,1,1,1};
         };
 
-    //// Uniform Itemlist ////
+//// Uniform Itemlist ////
         class UniformContainer: GroundContainer
         {
             //idc = 633;
@@ -1091,7 +1091,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.425";
         };
 
-    //// Vest ////
+//// Vest ////
         class VestSlot: SlotPrimary
         {
             //idc = 6381;
@@ -1102,7 +1102,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Vest Weight ////
+//// Vest Weight ////
         class VestLoad: GroundLoad
         {
             //idc = 6305;
@@ -1113,7 +1113,7 @@ class RscDisplayInventory {
             colorFrame[] = {1,1,1,1};
         };
 
-    //// Vest Itemlist ////
+//// Vest Itemlist ////
         class VestContainer: UniformContainer
         {
             //idc = 638;
@@ -1123,7 +1123,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.425";
         };
 
-    //// Backpack ////
+//// Backpack ////
         class BackpackSlot: SlotPrimary
         {
             //idc = 6191;
@@ -1134,7 +1134,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Backpack Weight ////
+//// Backpack Weight ////
         class BackpackLoad: GroundLoad
         {
             //idc = 6306;
@@ -1145,7 +1145,7 @@ class RscDisplayInventory {
             colorFrame[] = {1,1,1,1};
         };
 
-    //// Backpack Itemlist ////
+//// Backpack Itemlist ////
         class BackpackContainer: UniformContainer
         {
             //idc = 619;
@@ -1155,7 +1155,7 @@ class RscDisplayInventory {
             h = "safeZoneH * 0.425";
         };
 
-    //// Helmet ////
+//// Helmet ////
         class SlotHeadgear: SlotPrimary
         {
             //idc = 6240;
@@ -1166,7 +1166,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Facewear ////
+//// Facewear ////
         class SlotGoggles: SlotPrimary
         {
             //idc = 6216;
@@ -1177,7 +1177,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// NVG ////
+//// NVG ////
         class SlotHMD: SlotPrimary
         {
             //idc = 6217;
@@ -1188,7 +1188,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Binocular ////
+//// Binocular ////
         class SlotBinoculars: SlotPrimary
         {
             //idc = 6238;
@@ -1199,7 +1199,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Map ////
+//// Map ////
         class SlotMap: SlotPrimary
         {
             //idc = 6211;
@@ -1210,7 +1210,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// GPS ////
+//// GPS ////
         class SlotGPS: SlotPrimary
         {
             //idc = 6215;
@@ -1221,7 +1221,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Radio ////
+//// Radio ////
     /*
         #if __has_include("\idi\acre\addons\main\script_component.hpp")
         class SlotRadio: SlotPrimary
@@ -1243,7 +1243,7 @@ class RscDisplayInventory {
     /*
         #endif
     */    
-    //// Compass ////
+//// Compass ////
         class SlotCompass: SlotPrimary
         {
             //idc = 6212;
@@ -1254,7 +1254,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Clock ////
+//// Clock ////
         class SlotWatch: SlotPrimary
         {
             //idc = 6213;
@@ -1265,7 +1265,7 @@ class RscDisplayInventory {
             colorBackground[] = {1,1,1,0.1};
         };
         
-    //// Hidden ////
+//// Hidden ////
         class CA_ContainerBackground: RscText
         {
             w = "0";
@@ -1292,12 +1292,11 @@ class RscDisplayInventory {
             h = "0";
         };
         
-    //// Exile compat ////
+//// Exile compat ////
         /*
         #if __has_include("\exile_client\bootstrap\fn_postInit.sqf")
             #include "compat_exile_RscDisplayInventory.hpp"
         #endif
         */
     };
-
 };
