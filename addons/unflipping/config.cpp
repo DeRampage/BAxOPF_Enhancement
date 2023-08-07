@@ -1,14 +1,15 @@
+#include "script_component.hpp"
+
 class CfgPatches
 {
-    class unflipping
-    {
+    class ADDON {
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.90;
-        requiredAddons[] = {
-            "cba_main"
-        };
-        author = "Desty";
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"cba_main"};
+        author = "Desty";        
+        VERSION_CONFIG;
     };
 };
 

@@ -6,9 +6,9 @@ if(!hasInterface) exitWith {};
 GVAR(active) = false;
 
 [
-    localize "STR_TF47_Screenshot_Mode",
+    localize "STR_TF47_Screenshot_mode_title",
     QGVAR(toggle),
-    localize "STR_TF47_Screenshot_Mode_Toggle",
+    localize "STR_TF47_Screenshot_mode_Toggle",
     {
         GVAR(active) = !GVAR(active);
         [!GVAR(active)] call FUNC(toggleAll);

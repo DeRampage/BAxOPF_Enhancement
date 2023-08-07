@@ -1,4 +1,4 @@
-#define COMPONENT dwyl
+#define COMPONENT DWYL
 #include "\z\TF47\addons\main\script_mod.hpp"
 
 #include "\z\TF47\addons\main\script_macros.hpp"

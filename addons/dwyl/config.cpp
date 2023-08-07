@@ -2,13 +2,12 @@
 
 class CfgPatches {
     class ADDON {
-        name = "Dismount Where You Look";
+        name = COMPONENT;
         units[] = {};
         weapons[] = {};
-        requiredVersion = 0.0.1;
+        requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"cba_common"};
-        author = "Ampersand";
-        authors[] = {"Ampersand"};
+        authors[] = {"Ampersand","Rampage"};
         authorUrl = "https://github.com/ampersand38/dwyl";
         VERSION_CONFIG;
     };

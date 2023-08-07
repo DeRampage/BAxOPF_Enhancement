@@ -119,7 +119,6 @@ def check_sqf_syntax(filepath):
                         if (c not in [' ', '\t', '\n']):
                             onlyWhitespace = False
 
-                        checkForSemicolon = False
                         if (checkForSemicolon):
                             if (c not in [' ', '\t', '\n', '/']): # keep reading until no white space or comments
                                 checkForSemicolon = False
@@ -146,6 +145,12 @@ def check_sqf_syntax(filepath):
         if brackets_list.count('{') != brackets_list.count('}'):
             print("ERROR: A possible missing curly brace {{ or }} in file {0} {{ = {1} }} = {2}".format(filepath,brackets_list.count('{'),brackets_list.count('}')))
             bad_count_file += 1
+        pattern = re.compile('\s*(/\*[\s\S]+?\*/)\s*#include')
+        if pattern.match(content):
+            print("ERROR: A found #include after block comment in file {0}".format(filepath))
+            bad_count_file += 1
+
+
 
     return bad_count_file
 
@@ -160,14 +165,15 @@ def main():
     parser.add_argument('-m','--module', help='only search specified module addon folder', required=False, default="")
     args = parser.parse_args()
 
-    # Allow running from root directory as well as from inside the tools directory
-    rootDir = "../addons"
-    if (os.path.exists("addons")):
-        rootDir = "addons"
+    for folder in ['addons', 'optionals']:
+        # Allow running from root directory as well as from inside the tools directory
+        rootDir = "../" + folder
+        if (os.path.exists(folder)):
+            rootDir = folder
 
-    for root, dirnames, filenames in os.walk(rootDir + '/' + args.module):
-      for filename in fnmatch.filter(filenames, '*.sqf'):
-        sqf_list.append(os.path.join(root, filename))
+        for root, dirnames, filenames in os.walk(rootDir + '/' + args.module):
+            for filename in fnmatch.filter(filenames, '*.sqf'):
+                sqf_list.append(os.path.join(root, filename))
 
     for filename in sqf_list:
         bad_count = bad_count + check_sqf_syntax(filename)

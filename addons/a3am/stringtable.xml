@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
-    <Package name="A3AM">
+    <Package name="a3am">
         <Key ID="STR_TF47_a3am_Description">
             <English>TF47 Additional Measurement</English>
             <German>TF47 Erweiterte Maßeinheiten</German>
