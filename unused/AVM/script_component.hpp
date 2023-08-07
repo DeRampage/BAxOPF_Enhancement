@@ -17,5 +17,5 @@
 #define CONCAT(a,b) a##b
 #define COMPILE_FILE(name) compileFinal preprocessFileLineNumbers '\z\TF47\addons\##COMPONENT##\##name##.sqf'
 #define FUNC(name) TF47_fnc_##name
-#define LSTR(module,name) CONCAT(STR_TF47_AVM_,CONCAT(module,CONCAT(_,name)))
+#define LSTR(module,name) CONCAT(STR_TF47_avm_,CONCAT(module,CONCAT(_,name)))
 #define LSTRING(module,name) QUOTE(LSTR(module,name))

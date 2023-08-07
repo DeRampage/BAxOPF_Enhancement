@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TF47">
-    <Package name="Screenshot_mode">
-        <Key ID="STR_TF47_Screenshot_mode_title">
+    <Package name="screenshot_mode">
+        <Key ID="STR_TF47_screenshot_mode_title">
             <English>Screenshot Mode</English>
             <German>Screenshot Modus</German>
         </Key>
-        <Key ID="STR_TF47_Screenshot_mode_Toggle">
+        <Key ID="STR_TF47_screenshot_mode_Toggle">
             <English>Toggle Screenshot Mode</English>
             <German>Screenshot Modus umschalten</German>
         </Key>

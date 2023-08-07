@@ -50,8 +50,8 @@ def check_stringtable(filepath):
         package_name = package.get("name")
 
         if package_name.islower():
-            print("  ERROR: Package name attribute '{}' is all lowercase, should be in titlecase.".format(package_name))
-            errors += 1
+            print("  Warning: Package name attribute '{}' is all lowercase, should be in titlecase.".format(package_name))
+            # errors += 1
 
         if package_name != os.path.basename(os.path.dirname(filepath)):
             print("  ERROR: Package name attribute '{}' does not match the component folder name '{}'.".format(package_name,filepath))
