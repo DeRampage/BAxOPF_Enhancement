@@ -2,7 +2,7 @@
 [
     QGVAR(overlayOpacity), "SLIDER",
     [LSTRING(overlayOpacity_name), LSTRING(overlayOpacity_tooltip)],
-    ELSTRING(main,category_displayName),
+    ELSTRING(SimpleSuppress,category_displayName),
     [0,1,0.96,2],
     true,
     {
@@ -18,7 +18,7 @@
 [
     QGVAR(overlayTexture), "LIST",
     [LSTRING(overlayTexture_name), LSTRING(overlayTexture_tooltip)],
-    ELSTRING(main,category_displayName),
+    ELSTRING(SimpleSuppress,category_displayName),
     [[0, 1, 2], [LSTRING(overlayTexture_light), LSTRING(overlayTexture_medium), LSTRING(overlayTexture_dark)], 1],
     true,
     {
@@ -34,7 +34,7 @@
 [
     QGVAR(overlayFadeoutTime), "SLIDER",
     [LSTRING(overlayFadeoutTime_name), LSTRING(overlayFadeoutTime_tooltip)],
-    ELSTRING(main,category_displayName),
+    ELSTRING(SimpleSuppress,category_displayName),
     [1,30,10,1],
     true,
     {},
@@ -44,7 +44,7 @@
 [
     QGVAR(projectileMaxDistance), "SLIDER",
     [LSTRING(projectileMaxDistance_name), LSTRING(projectileMaxDistance_tooltip)],
-    ELSTRING(main,category_displayName),
+    ELSTRING(SimpleSuppress,category_displayName),
     [1,10,9,2],
     true,
     {},
@@ -54,7 +54,7 @@
 [
     QGVAR(shooterMinDistance), "SLIDER",
     [LSTRING(shooterMinDistance_name), LSTRING(shooterMinDistance_tooltip)],
-    ELSTRING(main,category_displayName),
+    ELSTRING(SimpleSuppress,category_displayName),
     [0,50,0,2],
     true,
     {},
@@ -64,7 +64,7 @@
 [
     QGVAR(checkLOS), "CHECKBOX",
     [LSTRING(checkLOS_name), LSTRING(checkLOS_tooltip)],
-    ELSTRING(main,category_displayName),
+    ELSTRING(SimpleSuppress,category_displayName),
     false,
     true,
     {},
