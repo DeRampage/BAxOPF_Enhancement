@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-    class ADDON
+    class COMPONENT
     {
         name = COMPONENT;
         units[] = {};
