@@ -62,7 +62,7 @@ class CfgVehicles
             {
                 color[] = {70,40,60};
                 ambient[] = {0.05,0.1,0.05};
-                intensity = 0.9;
+                intensity = 1; //original 0.9
                 size = 1;
                 innerAngle = 25;
                 outerAngle = 85;
@@ -73,7 +73,7 @@ class CfgVehicles
                 selection = "";
                 useFlare = 1;
                 flareSize = 0.1;
-                flareMaxDistance = 10;
+                flareMaxDistance = 50; //original 10
                 class Attenuation
                 {
                     start = 0;
@@ -96,8 +96,8 @@ class CfgVehicles
                 color[] = {160,120,80};
                 innerAngle = 3;
                 outerAngle = 15;
-                coneFadeCoef = 6;
-                intensity = 35;
+                coneFadeCoef = 2; //original 6
+                intensity = 70; //original 35
                 useFlare = 1;
                 flareSize = 0.6;
                 flareMaxDistance = 350;
@@ -138,6 +138,14 @@ class BettIR_Config
         {
             offset[] = {-0.027,0.28,0.15};
         };
+        //from compat
+        class rhsusf_acc_anpeq15_wmx: rhsusf_acc_anpeq15_top{};
+        class rhsusf_acc_anpeq15_wmx_light: rhsusf_acc_anpeq15_top{};
+        class rhsusf_acc_anpeq15_wmx_sc: rhsusf_acc_anpeq15_top{};
+        class rhsusf_acc_anpeq15_wmx_light_sc: rhsusf_acc_anpeq15_top{};
+        class rhsusf_acc_anpeq15_wmx_h: rhsusf_acc_anpeq15_top{};
+        class rhsusf_acc_anpeq15_wmx_light_h: rhsusf_acc_anpeq15_top{};
+        //compat
         class rhsusf_acc_anpeq15_top_h: rhsusf_acc_anpeq15_top{};
         class rhsusf_acc_anpeq15_bk_top: rhsusf_acc_anpeq15_top{};
         class rhsusf_acc_anpeq15_bk_top_h: rhsusf_acc_anpeq15_top{};
