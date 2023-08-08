@@ -17,10 +17,10 @@ tooltipOwned = "BAxOPF on!";
 /// Color used for DLC stripes and backgrounds (RGBA)
 dlcColor[] =
 {
-	0.23,
-	0.39,
-	0.30,
-	1
+    0.23,
+    0.39,
+    0.30,
+    1
 };
 /// Overview text, displayed from the extension menu
 overview = "This is the mod for standardized BAxOPF-Gameplay. HF GL. Dont complain.";
