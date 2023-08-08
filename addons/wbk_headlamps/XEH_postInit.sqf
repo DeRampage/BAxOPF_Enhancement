@@ -16,9 +16,9 @@ deleteVehicle _x;
 if (!(hasInterface )) exitWith {};
 [] spawn
 {
-	waitUntil { !isNull findDisplay 46 };
-	sleep 0.5;
-	player setVariable ["WBK_AttachedFlaslights",nil,true];
+    waitUntil { !isNull findDisplay 46 };
+    sleep 0.5;
+    player setVariable ["WBK_AttachedFlaslights",nil,true];
 ["WebKnight Headlamps", "wbk_headlampOnOff", ["Enable/Disable headlamp", "Enable/Disable an headlamp"], { 
 _unit = missionNamespace getVariable["bis_fnc_moduleRemoteControl_unit", player];
 if ((lifeState _unit == "INCAPACITATED") or !(alive _unit) or !("WBK_HeadLampItem" in items _unit)) exitWith {};
