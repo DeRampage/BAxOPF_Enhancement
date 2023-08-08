@@ -41,7 +41,7 @@ jobs:
       name: 'Build Mod with HEMTT'
       id: build
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2-preview
+      uses: actions/upload-artifact@v3
       with:
         name: baxopf_enhancement
         path: ${{ steps.build.outputs.release_path }}
