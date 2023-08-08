@@ -1,18 +1,20 @@
-﻿#include "script_component.hpp"
-
-class cfgPatches
+﻿class CfgPatches
 {
-    class ADDON
-    {
-        name = COMPONENT;
-        units[] = {};
-        weapons[] = {};
-        requiredVersion = REQUIRED_VERSION;
-		requiredAddons[]={"A3_Air_F","A3_Data_F","a3_anims_f"};
-		author[] = {"WebKnight","Rampage"};
-        VERSION_CONFIG;
-    };
+	class wbk_headlamps
+	{
+		units[]={};
+		weapons[]={};
+		requiredVersion=1.02;
+		requiredAddons[]=
+		{
+			"A3_Air_F",
+			"A3_Data_F",
+			"a3_anims_f"
+		};
+	};
 };
+
+
 
 class CfgWeapons
 {
@@ -26,8 +28,8 @@ class CfgWeapons
         scope = 2;      
         scopeArsenal = 2;
         scopeCurator = 2;
-        simulation= "ItemMineDetector"
-        picture = "z\TF47\addons\wbk_headlamps\wbk_flashlight_pic.paa";
+        simulation= "ItemMineDetector";
+        picture = "\z\TF47\addons\wbk_headlamps\wbk_flashlight_pic.paa";
         descriptionShort = "Head Lamp that you can activate by pressing CTRL+L (By Default).";
         class ItemInfo: InventoryItem_Base_F
         {
@@ -35,6 +37,11 @@ class CfgWeapons
         };
     };
 };
+
+
+
+
+
 
 class DefaultEventhandlers;
 class CfgMovesBasic
@@ -197,7 +204,7 @@ class Extended_PreInit_EventHandlers
 {
     class WBK_Headlapms_PreInit
     {
-        init="call compile preprocessFileLineNumbers '\z\TF47\addons\wbk_headlamps\WBK_Headlamps\XEH_preInit.sqf'";
+        init="call compile preprocessFileLineNumbers 'z\TF47\addons\wbk_headlamps\XEH_preInit.sqf'";
     };
 };
 
@@ -206,6 +213,6 @@ class Extended_PostInit_EventHandlers
 {
     class WBK_Headlapms_PostInit 
 	{
-        init="call compile preprocessFileLineNumbers 'z\TF47\addons\wbk_headlamps\WBK_Headlamps\XEH_postInit.sqf'";
+        init="call compile preprocessFileLineNumbers 'z\TF47\addons\wbk_headlamps\XEH_postInit.sqf'";
     };
 };
