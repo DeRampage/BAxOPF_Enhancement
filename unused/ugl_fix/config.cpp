@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-    class SNC_ugl_fix
+    class TF47_ugl_fix
     {
         name = "ugl_fix";
         units[] = {};

@@ -1,4 +1,4 @@
-#include "\z\SNC\addons\dynamic_Group\DynamicGroupsCommonDefines.inc"
+#include "\z\TF47\addons\dynamic_Group\DynamicGroupsCommonDefines.inc"
 
 _rolesel      = lbCurSel 2100;
 _freq         = ctrlText 1400;

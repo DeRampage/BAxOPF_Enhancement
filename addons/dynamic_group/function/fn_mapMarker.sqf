@@ -27,7 +27,7 @@
 //    if(!local _newMarker) exitWith {};
     private _name                 = format ["%1", _newMarker];
      _name                         = _name splitString "/";
-     if !(snc_dynamic_group_TF47_MapMarker) exitWith {};
+     if !(tf47_dynamic_group_TF47_MapMarker) exitWith {};
     
     private _channel             = _name select (count _name -1);
     if !( _channel == "0" || { _channel == "1" } || { _channel == "2" }) exitWith {};
@@ -35,7 +35,7 @@
      _MarkerPlayerID             = _MarkerPlayerID splitString "#";
     private _UserArrayPos        = (_MarkerPlayerID select 1);
     private _CreatorUID= (getUserInfo _UserArrayPos)select 2;
-    private _PlayerWhitelisted     = _CreatorUID in snc_dynamic_group_snc_mapmarker_whitelist;
+    private _PlayerWhitelisted     = _CreatorUID in tf47_dynamic_group_tf47_mapmarker_whitelist;
     private _PlayerUnit         = (getUserInfo _UserArrayPos select 10);
     private _PlayerUnitRole     = (group _PlayerUnit) getVariable ["BIS_dg_rol",false];
     

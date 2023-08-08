@@ -1,4 +1,4 @@
-#include "\z\SNC\addons\dynamic_Group\DynamicGroupsCommonDefines.inc"
+#include "\z\TF47\addons\dynamic_Group\DynamicGroupsCommonDefines.inc"
 /*
     author: -SONIC-
     
