@@ -79,3 +79,48 @@
     true // Needs mission restart
 ] call cba_settings_fnc_init;
 
+
+[
+    QGVAR(TF47_MapMarker),
+    "CHECKBOX", 
+    ["Restriction for Mapmarker", "Move the Marker from non Whitelistet Player to Groupchannel"], 
+    "TF47 Marker", 
+    false,
+    false,
+    { call TF47_dynGrps_fnc_mapMarker },
+    true // Needs mission restart
+] call cba_settings_fnc_init;
+
+[
+    QGVAR(TF47_MapMarker_Whitelist),
+    "EDITBOX", 
+    ["MapMarker_Whitelist", "Player UID, so that they can put Marker on Sidechannel"], 
+    "TF47 Marker", 
+    "['76561198100256441']",
+    true,
+    {},
+    false // Needs mission restart
+] call cba_settings_fnc_init;
+
+
+[
+    QGVAR(TF47_GroupFaction),
+    "EDITBOX", 
+    ["Custome Fractions", "Enter custome Fraction"], 
+    "TF47 Groupmanager", 
+    "['US Army','BW']",
+    true,
+    {},
+    false // Needs mission restart
+] call cba_settings_fnc_init;
+
+[
+    QGVAR(TF47_GroupLanguage),
+    "EDITBOX", 
+    ["Squad Language", "Define Language"], 
+    "TF47 Groupmanager", 
+    "['DE','EN']",
+    true,
+    {},
+    false // Needs mission restart
+] call cba_settings_fnc_init;

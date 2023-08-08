@@ -22,23 +22,23 @@ class CfgMarkers
         icon="\z\TF47\addons\dynamic_Group\data\b_att_air.paa";
         texture="\z\TF47\addons\dynamic_Group\data\b_att_air.paa";
     };
-    class b_plane_cas : b_plane
+    class b_plane_cas: b_plane
     {
         name = "CAS";
     };
-    class b_plane_cap : b_plane
+    class b_plane_cap: b_plane
     {
         name = "CAP";
     };
-    class b_plane_sead : b_plane
+    class b_plane_sead: b_plane
     {
         name = "SEAD";
     };
-    class b_plane_multi : b_plane
+    class b_plane_multi: b_plane
     {
         name = "Multirole";
     };
-    class b_plane_cargo : b_plane
+    class b_plane_cargo: b_plane
     {
         name = "Cargo";
     };

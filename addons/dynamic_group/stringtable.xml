@@ -49,5 +49,13 @@
             <English>Set your Role</English>
             <German>Stell deine Funktion ein</German>
         </Key>
+        <Key ID="STR_TF47_dynamic_group_Fraction">
+            <English>Fraction</English>
+            <German>Fraktion</German>
+        </Key>
+        <Key ID="STR_TF47_dynamic_group_NConfigure">
+            <English>You can't configure the group outside the Base</English>
+            <German>Sie können die Gruppe nicht außerhalb der Basis einstellen</German>
+        </Key>
     </Package>
 </Project>

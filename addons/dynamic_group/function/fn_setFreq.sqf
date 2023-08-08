@@ -1,4 +1,16 @@
-#include "\z\TF47\addons\dynamic_Group\DynamicGroupsCommonDefines.inc"
+#include "\z\SNC\addons\dynamic_Group\DynamicGroupsCommonDefines.inc"
+/*
+    author: -SONIC-
+    
+    description:
+        
+    parameter:
+        nothing
+    return
+        nothing
+    example
+        na
+*/
 
 if !(["PlayerIsLeader",[player]] call BIS_fnc_dynamicGroups) exitWith {};
 

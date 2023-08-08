@@ -1,6 +1,5 @@
 
 /*
-    
     author: -SONIC-
     
     description:
@@ -11,7 +10,6 @@
         nothing
     example
         na
-        
 */
 
 disableSerialization; 
@@ -29,8 +27,8 @@ private _editIntern = (_display displayCtrl 1400);
 
 _freqIntern = "Intern Frequenz";
 
-if (!(group player getVariable "SNC_core_Marker_Sql_Freq_Intern" isEqualTo "")) then{
-    _freqIntern = group player getVariable "SNC_core_Marker_Sql_Freq_Intern";
+if (!(group player getVariable "TF47_core_Marker_Sql_Freq_Intern" isEqualTo "")) then{
+    _freqIntern = group player getVariable "TF47_core_Marker_Sql_Freq_Intern";
 };
 
 _editIntern ctrlSetText format ["%1",_freqIntern];

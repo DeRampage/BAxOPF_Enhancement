@@ -16,16 +16,16 @@ class CfgFunctions {
             class updateGroupTracking {};
             class createTrackingIconLocal {};
         };
+        class TF47_MapMarker {
+            file = "\z\TF47\addons\dynamic_Group\function";
+            class mapMarker {};
+        };
     };
-    class A3_Mark
-    {
-        tag="BIS";
-        class DynamicGroups
-        {
-            file="\z\TF47\addons\dynamic_Group\function";
-            class dynamicGroups
-            {
-            };
+    class A3_Mark {
+        tag = "BIS";
+        class DynamicGroups {
+            file = "\z\TF47\addons\dynamic_Group\function";
+            class dynamicGroups {};
         };
     };
 };

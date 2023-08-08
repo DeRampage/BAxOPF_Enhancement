@@ -94,7 +94,7 @@ if(GVAR(staticGroupList))then{
             (_startStaticMarker#1-((_idx+1)*300)),
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
-            (format ["%1 | %2 | Freq: %3", (groupid _x), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
+            (format ["%1 | %2  | %3 | Freq: %4", (groupid _x),(_x getVariable ["BIS_dg_lan",""]), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
         ] call TF47_fnc_createTrackingIconLocal;
 
         GVAR(staticTracker) pushBack _mkr;
@@ -135,7 +135,7 @@ if(GVAR(staticGroupList))then{
             (_startStaticMarker#1- ( (_idx+1)*300*_n) ),
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
-            (format ["%1 | %2 | Freq: %3", (groupid _x), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
+            (format ["%1 | %2  | %3 | Freq: %4", (groupid _x),(_x getVariable ["BIS_dg_lan",""]), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
         ] call TF47_fnc_createTrackingIconLocal;
         GVAR(staticTracker) pushBack _mkr;
         _id = _id +1;
@@ -152,7 +152,7 @@ if(GVAR(staticGroupList))then{
             (_startStaticMarker#1-((_idx+1)*300)),
             (_x getVariable ["BIS_dg_rol","b_unknown"]),
             (format ["Color%1", side _x]),
-            (format ["%1 | %2 | Freq: %3", (groupid _x), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
+            (format ["%1 | %2  | %3 | Freq: %4", (groupid _x),(_x getVariable ["BIS_dg_lan",""]), (getText (configfile >> "CfgMarkers" >> _markerType >> "Name")), (_x getVariable ["BIS_dg_frq",""]) ])
         ] call TF47_fnc_createTrackingIconLocal;
         GVAR(staticTracker) pushBack _mkr;
         _id = _id +1;
