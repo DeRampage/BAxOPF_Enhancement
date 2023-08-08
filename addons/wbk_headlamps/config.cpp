@@ -1,20 +1,12 @@
-﻿class CfgPatches
-{
-    class wbk_headlamps
-    {
+class CfgPatches {
+    class wbk_headlamps {
         units[]={};
         weapons[]={};
         requiredVersion=1.02;
-        requiredAddons[]=
-        {
-            "A3_Air_F",
-            "A3_Data_F",
-            "a3_anims_f"
-        };
+        requiredAddons[]={"A3_Air_F","A3_Data_F","a3_anims_f"};
+        authors[] = {"WebKnight", "Rampage"};
     };
 };
-
-
 
 class CfgWeapons
 {
@@ -37,11 +29,6 @@ class CfgWeapons
         };
     };
 };
-
-
-
-
-
 
 class DefaultEventhandlers;
 class CfgMovesBasic
@@ -167,7 +154,6 @@ class CfgVehicles
     };
 };
 
-
 class CfgSounds
 {
     sounds[] = {};
@@ -185,7 +171,6 @@ class CfgSounds
     };
 };
 
-
 class Extended_InitPost_EventHandlers 
 {
     class CAManBase
@@ -198,8 +183,6 @@ class Extended_InitPost_EventHandlers
     };
 };
 
-
-
 class Extended_PreInit_EventHandlers
 {
     class WBK_Headlapms_PreInit
@@ -207,7 +190,6 @@ class Extended_PreInit_EventHandlers
         init="call compile preprocessFileLineNumbers 'z\TF47\addons\wbk_headlamps\XEH_preInit.sqf'";
     };
 };
-
 
 class Extended_PostInit_EventHandlers 
 {
