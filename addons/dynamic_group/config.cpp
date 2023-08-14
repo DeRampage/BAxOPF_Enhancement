@@ -18,27 +18,57 @@ class CfgMarkers
     class b_plane;
     class b_att_air: b_unknown
     {
-        name="$STR_A3_CfgMarkers_NATO_att_air";
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_NATO_att_air";
         icon="\z\TF47\addons\dynamic_Group\data\b_att_air.paa";
         texture="\z\TF47\addons\dynamic_Group\data\b_att_air.paa";
     };
-    class b_plane_cas : b_plane
+    class b_sof: b_unknown
+    {
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_sof";
+        icon="\z\TF47\addons\dynamic_Group\data\b_sof.paa";
+        texture="\z\TF47\addons\dynamic_Group\data\b_sof.paa";
+    };
+    class b_jfst: b_unknown
+    {
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_jfst";
+        icon="\z\TF47\addons\dynamic_Group\data\b_jfst.paa";
+        texture="\z\TF47\addons\dynamic_Group\data\b_jfst.paa";
+    };
+    class b_csar: b_unknown
+    {
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_csar";
+        icon="\z\TF47\addons\dynamic_Group\data\b_csar.paa";
+        texture="\z\TF47\addons\dynamic_Group\data\b_csar.paa";
+    };
+    class b_cargo: b_unknown
+    {
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_cargo";
+        icon="\z\TF47\addons\dynamic_Group\data\b_cargo.paa";
+        texture="\z\TF47\addons\dynamic_Group\data\b_cargo.paa";
+    };
+    class b_uav: b_unknown
+    {
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_uav";
+        icon="\z\TF47\addons\dynamic_Group\data\b_uav.paa";
+        texture="\z\TF47\addons\dynamic_Group\data\b_uav.paa";
+    };
+    class b_plane_cas: b_plane
     {
         name = "CAS";
     };
-    class b_plane_cap : b_plane
+    class b_plane_cap: b_plane
     {
         name = "CAP";
     };
-    class b_plane_sead : b_plane
+    class b_plane_sead: b_plane
     {
-        name = "SEAD";
+        name = "SEAD/DEAD";
     };
-    class b_plane_multi : b_plane
+    class b_plane_multi: b_plane
     {
         name = "Multirole";
     };
-    class b_plane_cargo : b_plane
+    class b_plane_cargo: b_plane
     {
         name = "Cargo";
     };

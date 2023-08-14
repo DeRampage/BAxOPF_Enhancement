@@ -149,12 +149,16 @@ switch (_mode) do
 
         if (!isNull _group && {!isNull _leader} && {_leader == leader _group}) then
         {
-            private ["_insignia", "_name", "_private"];
+            private ["_insignia", "_name", "_private","_defFac","_role","_freq","_lang","_fact"];
+            _defFac     = (parseSimpleArray TF47_dynamic_Group_TF47_GroupFaction) select 0;
             _insignia   = _data param [0, ["LoadRandomInsignia"] call GROUPS, [""]];
             _name       = _data param [1, groupId _group, [""]];
             _private    = _data param [2, false, [true]];
             _role       = _data param [3, "b_inf", [""]];
             _freq       = _data param [4, "N/D", [""]];
+            _lang       = _data param [5, "DE", [""]];
+            _fact       = _data param [6, "NoFaction", [""]];
+            _xMed       = _data param [6, 0, [""]];
 
             // Flag as registered
             _group setVariable [VAR_GROUP_REGISTERED, true, IS_PUBLIC];
@@ -169,7 +173,19 @@ switch (_mode) do
             _group setVariable [VAR_GROUP_ROLE, _role, IS_PUBLIC];
 
             // Set Freq
-            _group setVariable [VAR_GROUP_FREQ, _Freq, IS_PUBLIC];
+            _group setVariable [VAR_GROUP_FREQ, _freq, IS_PUBLIC];
+
+            // Set Language
+            _group setVariable [VAR_GROUP_LANG, _lang, IS_PUBLIC];
+            
+            // Set Factiion
+            _group setVariable [VAR_GROUP_FACT, _fact, IS_PUBLIC];
+            
+            // Set Factiion
+            _group setVariable [VAR_GROUP_xMed, _xMed, IS_PUBLIC];
+            
+            // Set Factiion
+            _group setVariable [VAR_GROUP_xEng, _xMed, IS_PUBLIC];
 
             // Set lock status, unlocked by default
             _group setVariable [VAR_GROUP_PRIVATE, _private, IS_PUBLIC];
@@ -207,6 +223,10 @@ switch (_mode) do
                 _group setVariable [VAR_GROUP_INSIGNIA, nil, IS_PUBLIC];
                 _group setVariable [VAR_GROUP_ROLE, nil, IS_PUBLIC];
                 _group setVariable [VAR_GROUP_FREQ, nil, IS_PUBLIC];
+                _group setVariable [VAR_GROUP_xMed, nil, IS_PUBLIC];
+                _group setVariable [VAR_GROUP_xEng, nil, IS_PUBLIC];
+                _group setVariable [VAR_GROUP_LANG, nil, IS_PUBLIC];
+                _group setVariable [VAR_GROUP_FACT, nil, IS_PUBLIC];
                 _group setVariable [VAR_GROUP_PRIVATE, nil, IS_PUBLIC];
                 _group setVariable [VAR_GROUP_VAR, nil, IS_PUBLIC];
             }
@@ -1157,11 +1177,19 @@ switch (_mode) do
         _group  = _params param [0, grpNull, [grpNull]];
         _leader = _params param [1, objNull, [objNull]];
         _who    = _params param [2, objNull, [objNull]];
+        _XmedicsInGroup = _group getvariable ["BIS_dg_xmed",0];
+        _XenegneerInGroup = _group getvariable ["BIS_dg_xeng",0];
+        
 
         if (!isNull _leader && {!isNull _who} && {_leader != _who}) then
         {
             [["LocalShowNotification", ["DynamicGroups_PlayerJoined", [name _who], _leader]], "BIS_fnc_dynamicGroups", _leader] call BIS_fnc_mp;
         };
+/*        
+        _who setVariable ["ace_medical_medicclass", 0, true];
+        _who setVariable ["ACE_isEngineer", 0, true];
+        _who setVariable ["ACE_isEOD", 0, true];
+*/
     };
 
     /**
@@ -1188,11 +1216,27 @@ switch (_mode) do
         _group  = _params param [0, grpNull, [grpNull]];
         _leader = _params param [1, objNull, [objNull]];
         _who    = _params param [2, objNull, [objNull]];
+        _XmedicsInGroup = _group getvariable ["BIS_dg_xmed",0];
+        _XenegneerInGroup = _group getvariable ["BIS_dg_xeng",0];
+        
 
         if (!isNull _leader && {!isNull _who} && {_leader != _who}) then
         {
             [["LocalShowNotification", ["DynamicGroups_PlayerLeft", [name _who], _leader]], "BIS_fnc_dynamicGroups", _leader] call BIS_fnc_mp;
         };
+/*        if (_who getVariable ["ace_medical_medicclass",true] !=0 )then{
+            _newamount = _XmedicsInGroup - 1;
+            group player setvariable ["BIS_dg_xmed",_newamount]
+        };
+        if (_who getVariable ["ACE_isEngineer",true] !=0 )then{
+            _newamount = _XenegneerInGroup - 1;
+            group player setvariable ["BIS_dg_xeng",_newamount]
+        };
+        
+        _who setVariable ["ace_medical_medicclass", 0, true];
+        _who setVariable ["ACE_isEngineer", 0, true];
+        _who setVariable ["ACE_isEOD", 0, true];
+*/
     };
 
     /**
@@ -1211,7 +1255,7 @@ switch (_mode) do
 
         if (!isNull _to && {!isNull _from} && {_to != _from}) then
         {
-//["LocalShowNotification", ["DynamicGroups_InviteReceived", [name _from], _to]] call GROUPS;
+//            ["LocalShowNotification", ["DynamicGroups_InviteReceived", [name _from], _to]] call GROUPS;
         };
 
         // Log
@@ -1252,12 +1296,27 @@ switch (_mode) do
         _group          = _params param [0, grpNull, [grpNull]];
         _who            = _params param [1, objNull, [objNull]];
         _oldLeader      = _params param [2, objNull, [objNull]];
+        _XmedicsInGroup = _group getvariable ["BIS_dg_xmed",0];
+        _XenegneerInGroup = _group getvariable ["BIS_dg_xeng",0];
+        
 
         if (!isNull _oldLeader && {!isNull _who} && {_oldLeader != _who}) then
         {
             [["LocalShowNotification", ["DynamicGroups_GroupDisbanded", [name _oldLeader], _who]], "BIS_fnc_dynamicGroups", _who] call BIS_fnc_mp;
         };
-
+/*        if (_who getVariable ["ace_medical_medicclass",true] !=0 )then{
+            _newamount = _XmedicsInGroup - 1;
+            group player setvariable ["BIS_dg_xmed",_newamount]
+        };
+        if (_who getVariable ["ACE_isEngineer",true] !=0 )then{
+            _newamount = _XenegneerInGroup - 1;
+            group player setvariable ["BIS_dg_xeng",_newamount]
+        };
+        
+        _who setVariable ["ace_medical_medicclass", 0, true];
+        _who setVariable ["ACE_isEngineer", 0, true];
+        _who setVariable ["ACE_isEOD", 0, true];
+*/
         // Log
         if (LOG_ENABLED) then
         {
@@ -1274,12 +1333,26 @@ switch (_mode) do
         _group  = _params param [0, grpNull, [grpNull]];
         _who    = _params param [1, objNull, [objNull]];
         _leader = _params param [2, objNull, [objNull]];
-
+        _XmedicsInGroup = _group getvariable ["BIS_dg_xmed",0];
+        _XenegneerInGroup = _group getvariable ["BIS_dg_xeng",0];
+        
         if (!isNull _leader && {!isNull _who} && {_who != _leader}) then
         {
             [["LocalShowNotification", ["DynamicGroups_Kicked", [name _leader], _who]], "BIS_fnc_dynamicGroups", _who] call BIS_fnc_mp;
         };
-
+/*        if (_who getVariable ["ace_medical_medicclass",true] !=0 )then{
+            _newamount = _XmedicsInGroup - 1;
+            group player setvariable ["BIS_dg_xmed",_newamount]
+        };
+        if (_who getVariable ["ACE_isEngineer",true] !=0 )then{
+            _newamount = _XenegneerInGroup - 1;
+            group player setvariable ["BIS_dg_xeng",_newamount]
+        };
+        
+        _who setVariable ["ace_medical_medicclass", 0, true];
+        _who setVariable ["ACE_isEngineer", 0, true];
+        _who setVariable ["ACE_isEOD", 0, true];
+*/
         // Log
         if (LOG_ENABLED) then
         {

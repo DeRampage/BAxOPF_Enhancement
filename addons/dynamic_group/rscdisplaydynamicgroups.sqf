@@ -268,7 +268,7 @@ switch _mode do
         }
         else
         {
-            private ["_groupName", "_groupPicture", "_groupInstance", "_groupLeader", "_groupPlayers", "_groupSide", "_groupIsPrivate"];
+            private ["_groupName", "_groupPicture", "_groupInstance", "_groupLeader", "_groupPlayers", "_groupSide", "_groupIsPrivate", "_groupxMed", "_groupxEng", "_groupFreq", "_groupRole", "_groupRolename"];
             _groupName      = groupId _playerGroup;
             _groupPicture   = _playerGroup getVariable [VAR_GROUP_INSIGNIA, ""];
             _groupIsPrivate = _playerGroup getVariable [VAR_GROUP_PRIVATE, false];
@@ -276,6 +276,8 @@ switch _mode do
             _groupPlayers   = units _playerGroup;
             _groupSide      = side _playerGroup;
             _groupFreq      = _playerGroup getVariable [VAR_GROUP_FREQ, ""];
+            _groupxMed      = _playerGroup getVariable [VAR_GROUP_xMed, 0];
+            _groupxEng      = _playerGroup getVariable [VAR_GROUP_xEng, 0];
             _groupRole      = _playerGroup getVariable [VAR_GROUP_ROLE, ""];
             _groupRolename  = getText (configfile >> "CfgMarkers" >> _groupRole >> "Name");
 
