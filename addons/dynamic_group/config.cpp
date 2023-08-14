@@ -24,13 +24,13 @@ class CfgMarkers
     };
     class b_sof: b_unknown
     {
-        name="$STR_TF47_dynamic_group_A3_CfgMarkers_SOF";
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_sof";
         icon="\z\TF47\addons\dynamic_Group\data\b_sof.paa";
         texture="\z\TF47\addons\dynamic_Group\data\b_sof.paa";
     };
     class b_jfst: b_unknown
     {
-        name="$STR_TF47_dynamic_group_A3_CfgMarkers_JFST";
+        name="$STR_TF47_dynamic_group_A3_CfgMarkers_jfst";
         icon="\z\TF47\addons\dynamic_Group\data\b_jfst.paa";
         texture="\z\TF47\addons\dynamic_Group\data\b_jfst.paa";
     };

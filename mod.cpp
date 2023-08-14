@@ -7,7 +7,7 @@ logoSmall = "47th_STS_color_512x512.paa";
 /// Logo displayed in the main menu
 logo = "47th_STS_color_512x512.paa";
 /// When the mouse is over, in the main menu
-logoOver = "tf47forecon.paa";
+logoOver = "47th_STS_color_512x512.paa";
 /// Website URL, that can accessed from the expansions menu
 action = "https://steamcommunity.com/groups/47STS";
 // name of the action button

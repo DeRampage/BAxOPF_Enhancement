@@ -11,6 +11,8 @@ _display = (findDisplay 135624);
 _roles = [
     "b_inf",
     "b_recon",
+    "b_sof",
+    "b_jfst",
     "b_motor_inf",
     "b_mech_inf",
     "b_armor",
@@ -18,6 +20,9 @@ _roles = [
     "b_mortar",
     "b_air",
     "b_att_air",
+    "b_csar",
+    "b_cargo",
+    "b_uav",
     "b_naval",
     "b_hq",
     "b_med",
