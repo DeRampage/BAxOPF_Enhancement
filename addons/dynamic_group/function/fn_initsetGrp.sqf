@@ -3,9 +3,9 @@
 if (isNil "is_menuok") then {is_menuok = true;};
 if (isNil "lhd" ) then {lhd = [0,0,0]};
 if !(isNil "F_getNearestFob") then {
-    if !(round (player distance2D ([] call F_getNearestFob)) < 150 || (player distance2D lhd) <= 200) exitwith {closeDialog 0; hint localize "STR_NConfigure";([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups';};
+    if !(round (player distance2D ([] call F_getNearestFob)) < 150 || (player distance2D lhd) <= 200) exitwith {closeDialog 0; hint localize "STR_TF47_dynamic_group_NConfigure";([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups';};
 };
-//if !(round (player distance2D ([] call F_getNearestFob)) < 150 || (player distance2D lhd) <= 200) exitwith {closeDialog 0; hint localize "STR_NConfigure";([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups';};
+//if !(round (player distance2D ([] call F_getNearestFob)) < 150 || (player distance2D lhd) <= 200) exitwith {closeDialog 0; hint localize "STR_TF47_dynamic_group_NConfigure";([] call BIS_fnc_displayMission) createDisplay 'RscDisplayDynamicGroups';};
 
 _display = (findDisplay 135624);
 _roles = [

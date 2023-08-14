@@ -15,7 +15,7 @@ class RscDisplayDynamicGroups
                     shadow = 0;
                     style = 1;
                     idc = 9383;
-                    text = "$STR_Uniform";
+                    text = "$STR_TF47_dynamic_group_Uniform";
                     x = "0.4 * ( ( (safezoneW / safezoneH) min 1.2) / 40)";
                     y = "3.2 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
                     w = "3.4 * ( ( (safezoneW / safezoneH) min 1.2) / 40)";
@@ -29,7 +29,7 @@ class RscDisplayDynamicGroups
                     shadow = 0;
                     style = 1;
                     idc = 9386;
-                    text = "$STR_Freq";
+                    text = "$STR_TF47_dynamic_group_Freq";
                     x = "0.4 * ( ((safezoneW / safezoneH) min 1.2) / 40)";
                     y = "4.5 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
                     w = "3.4 * ( ((safezoneW / safezoneH) min 1.2) / 40)";
@@ -62,7 +62,7 @@ class RscDisplayDynamicGroups
                 };
                 class TextPrivate: RscText
                 {
-                    text = "$STR_Role";
+                    text = "$STR_TF47_dynamic_group_Role";
                 };
                 class TextGroupRole: RscText
                 {
@@ -118,7 +118,7 @@ class RscDisplayDynamicGroups
         class TF47_SetgrpBtn: RscButton
         {
             idc = 9340052;
-            text = "$STR_setRole";  //--- ToDo: Localize;
+            text = "$STR_TF47_dynamic_group_setRole";  //--- ToDo: Localize;
             x = "30.1 *   ( ((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX + (safezoneW - ((safezoneW / safezoneH) min 1.2))/2)";
             y = "18.4 *   ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - ( ((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
             w = "9.3 *    ( ((safezoneW / safezoneH) min 1.2) / 40)";
@@ -128,7 +128,7 @@ class RscDisplayDynamicGroups
         class TF47_SetInsiBtn: RscButton
         {
             idc = 934000;
-            text = "$STR_selInsi"; //--- ToDo: Localize;
+            text = "$STR_TF47_dynamic_group_selInsi"; //--- ToDo: Localize;
             x = "0.624781 * safezoneW + safezoneX";
             y = "0.676 * safezoneH + safezoneY";
             w = "0.115088 * safezoneW";

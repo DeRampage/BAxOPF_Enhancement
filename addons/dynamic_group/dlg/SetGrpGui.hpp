@@ -20,7 +20,7 @@ class Rsctf47_DynGrp_setGrp
         class Header: RscText
         {
             idc=-1;
-            text="$STR_SetGroupData";
+            text="$STR_TF47_dynamic_group_SetGroupData";
             x = 0.380169 * safezoneW + safezoneX;
             y = 0.2382 * safezoneH + safezoneY;
             w = 0.243787 * safezoneW;
@@ -39,7 +39,7 @@ class Rsctf47_DynGrp_setGrp
         class Freq_titel: RscText
         {
             idc = 1001;
-            text = "$STR_IntFreq"; //--- ToDo: Localize;
+            text = "$STR_TF47_dynamic_group_IntFreq"; //--- ToDo: Localize;
             x = 0.432969 * safezoneW + safezoneX;
             y = 0.445 * safezoneH + safezoneY;
             w = 0.0979687 * safezoneW;
@@ -76,7 +76,7 @@ class Rsctf47_DynGrp_setGrp
         {
             idc = 9978;
 
-            text = "$STR_Apply"; //--- ToDo: Localize;
+            text = "$STR_TF47_dynamic_group_Apply"; //--- ToDo: Localize;
             x = 0.501238 * safezoneW + safezoneX;
             y = 0.6364 * safezoneH + safezoneY;
             w = 0.122513 * safezoneW;
@@ -87,7 +87,7 @@ class Rsctf47_DynGrp_setGrp
         {
             idc = 9980;
 
-            text = "$STR_Cancel"; //--- ToDo: Localize;
+            text = "$STR_TF47_dynamic_group_Cancel"; //--- ToDo: Localize;
             x = 0.379962 * safezoneW + safezoneX;
             y = 0.6364 * safezoneH + safezoneY;
             w = 0.1188 * safezoneW;
