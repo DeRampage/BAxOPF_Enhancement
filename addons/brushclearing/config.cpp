@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ace_trenches", "ace_gestures"};
+        requiredAddons[] = {"ace_trenches", "ace_gestures", "ace_common"};
         author = "Ampersand";
         authors[] = {"Ampersand","Rampage"};
         url = "https://github.com/ampersand38/Brush-Clearing";
