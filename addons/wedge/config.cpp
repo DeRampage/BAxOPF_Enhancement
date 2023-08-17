@@ -2,7 +2,7 @@
 
 class CfgPatches {
     class AMP_Door_Wedge {
-        name = COMPONENT_NAME;
+        name = COMPONENT;
         units[] = {"AMP_Door_Wedge_Place"};
         weapons[] = {"AMP_Door_Wedge"};
         requiredVersion = REQUIRED_VERSION;
@@ -12,7 +12,7 @@ class CfgPatches {
             "ace_explosives"
         };
         author = "Ampersand";
-        authors[] = {"Ampersand"};
+        authors[] = {"Ampersand","Rampage"};
         authorUrl = "https://github.com/ampersand38/";
         VERSION_CONFIG;
     };

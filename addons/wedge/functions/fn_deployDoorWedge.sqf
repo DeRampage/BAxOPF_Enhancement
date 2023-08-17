@@ -58,9 +58,9 @@ _intersectPosASL = _intersections select 0 select 0;
 _unit removeItem "AMP_Door_Wedge";
 _wedge = createVehicle ["AMP_Door_Wedge_Place", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 _wedge setPosASL ((_intersectPosASL vectorAdd [0,0,0.05]) vectorAdd (_surfaceNormal vectorMultiply -0.01));
-_wedge setDir ([0,0,0] getDir _surfaceNormal) + 90;
+_wedge setDir ([0,0,0] getDir _surfaceNormal); // + 90;
 _wedge setVariable ["AMP_Door_Wedge_Info", [_house, _door], true];
-_wedge setObjectTexture [0, "#(rgb,8,8,3)color(1,1,1,0.06)"];
+//_wedge setObjectTexture [0, "#(rgb,8,8,3)color(1,1,1,0.06)"];
 _house setVariable ["bis_disabled_" + _door, 1, true];
 
 [_wedge, _intersectPosASL]
