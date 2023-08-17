@@ -1,4 +1,7 @@
 # Arma-3-Breaching-Charge
+No Changes were made to the mod.
+Added: with Enhancement 1.0
+Date updated: 16.08.23
 
 Breaching charge that sticks to surfaces, demolishes walls, and opens doors, with minimal collateral damage.
 
