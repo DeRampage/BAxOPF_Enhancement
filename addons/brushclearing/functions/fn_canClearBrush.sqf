@@ -27,6 +27,8 @@ if (
 // Check if unit is a player
 private _isPlayer = isPlayer _unit;
 
+if !([_unit] call ace_common_fnc_canDig) exitWith {false};
+
 if (_isPlayer && {!local _unit}) exitWith {false};
 
 private _startPos = if (_isPlayer) then {
@@ -45,5 +47,5 @@ if (_intersections isEqualTo []) exitWith {false};
 // Terrain
 if (isNull _intersectObj && {isNull _parentObject}) exitWith {true};
 
-// If not terrain, check for bushes
-(nearestTerrainObjects [_intersectObj, ["Bush"], 0]) isNotEqualTo []
+// If not terrain, make sure its not trees or bsuehs
+if !((nearestTerrainObjects [ _intersectObj , ["TREE", "SMALL TREE", "BUSH"], 10]) isEqualTo [] ) exitWith {false};
