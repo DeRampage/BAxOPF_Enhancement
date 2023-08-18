@@ -5,7 +5,7 @@ class CfgPatches
    {
         name = COMPONENT;
         units[] = {};
-        weapons[] = {};
+        weapons[] = {"TF47_AUR_Grappling_Hook","AUR_rope30","AUR_rope40","AUR_rope50","AUR_rope60","AUR_rope80","AUR_rope100","AUR_AnchorKit","AUR_BelayDevice","AUR_AscenderDevice"};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"CBA_Extended_EventHandlers","CBA_MAIN"};
         author[] = {"sethduda","Rampage"};

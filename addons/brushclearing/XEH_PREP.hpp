@@ -3,3 +3,5 @@
 
 PREP(canClearBrush);
 PREP(clearBrush);
+PREP(canClearTree);
+PREP(clearTree);
