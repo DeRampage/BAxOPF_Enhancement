@@ -1,4 +1,4 @@
-["Brush Clearing", QGVAR(brushClearing), "Clear Brush/tree", {
+["TF47 Brush & Tree Clearing", QGVAR(brushClearing), "Clear Brush/tree", {
     private _player = ACE_player;
 
     // Clear brush if possible
