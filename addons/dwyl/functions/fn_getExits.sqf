@@ -25,18 +25,18 @@ private _selectionNames = _vehicle selectionNames "Memory";
 private _sn = [];
 private _vehicleType = typeOf _vehicle;
 {
-	private _cfgTurret = [_vehicleType, _x] call BIS_fnc_turretConfig;
-	{
-		private _cfgMemoryPoint = _cfgTurret >> format ["memoryPointsGetIn%1", _x];
-		if (!isNull _cfgMemoryPoint) then {
-			{
-				_x = toLower _x;
-				if (_x in _selectionNames) then {
-					_sn pushBackUnique _x;
-				};
-			} forEach (if (isArray _cfgMemoryPoint) then { getArray _cfgMemoryPoint } else { [getText _cfgMemoryPoint] });
-		};
-	} foreach ["Driver", "CoDriver", "Commander", "Gunner", "Cargo"];
+    private _cfgTurret = [_vehicleType, _x] call BIS_fnc_turretConfig;
+    {
+        private _cfgMemoryPoint = _cfgTurret >> format ["memoryPointsGetIn%1", _x];
+        if (!isNull _cfgMemoryPoint) then {
+            {
+                _x = toLower _x;
+                if (_x in _selectionNames) then {
+                    _sn pushBackUnique _x;
+                };
+            } forEach (if (isArray _cfgMemoryPoint) then { getArray _cfgMemoryPoint } else { [getText _cfgMemoryPoint] });
+        };
+    } foreach ["Driver", "CoDriver", "Commander", "Gunner", "Cargo"];
 } forEach ([[-1]] + allTurrets [_vehicle, true]);
 if (_sn isEqualTo []) exitWith {};
 
