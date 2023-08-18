@@ -1,4 +1,4 @@
-// Proxy tweaks: blacklist, whitelist, offset, index
+// Proxy tweaks: blacklist, whitelist, index
 #include "mods\a3.sqf"
 #include "mods\rhsusaf.sqf"
 #include "mods\rhsafrf.sqf"
@@ -14,7 +14,7 @@ private _sn = _v selectionNames "FireGeometry" select {
     private _proxy = toLower _x;
     private _proxyIndex = _proxy select [(_proxy find ".") + 1];
     // has non-zero selection position
-    !((_v selectionPosition _proxy) isEqualTo [0,0,0]) && {
+    !((_v selectionPosition [_proxy, "FireGeometry", "AveragePoint"]) isEqualTo [0,0,0]) && {
     // ends with a number after a period
     ((parseNumber _proxyIndex > 0) || {_proxyIndex isEqualTo "0"}) && {
     // contains seat role
@@ -47,7 +47,7 @@ player addAction ["Next Turret Seat", {
         player moveInTurret [_this # 0,[amp_turretIndex]];
         amp_turretIndex = amp_turretIndex + 1;
     };
-}, nil, 10, true, false]
+}, nil, 10, true, false];
 
 // draw seat proxies
 if !(isNil "amp_id") then { removeMissionEventHandler ["Draw3D", amp_id]; };
@@ -57,7 +57,7 @@ amp_id = addMissionEventHandler ["Draw3D",{
         private _proxy = toLower _x;
         private _proxyIndex = _proxy select [(_proxy find ".") + 1];
         // has non-zero selection position
-        !((_v selectionPosition _proxy) isEqualTo [0,0,0]) && {
+        !((_v selectionPosition [_proxy, "FireGeometry", "AveragePoint"]) isEqualTo [0,0,0]) && {
         // ends with a number after a period
         ((parseNumber _proxyIndex > 0) || {_proxyIndex isEqualTo "0"}) && {
         // contains seat role
@@ -69,7 +69,7 @@ amp_id = addMissionEventHandler ["Draw3D",{
             drawIcon3D [
                 "a3\ui_f\data\Map\MarkerBrushes\cross_ca.paa",
                 [1,1,1,1],
-                _v modelToWorldVisual (_v selectionPosition _x),
+                _v modelToWorldVisual (_v selectionPosition [_x, "FireGeometry", "AveragePoint"]),
                 1,1,0,
                 _x
             ];

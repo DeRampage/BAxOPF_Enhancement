@@ -11,7 +11,7 @@ Move unit into vehicle seat near center of view
 * Return Value:
 * -
 
-* Exrwylle:
+* Example:
 * [player, vehicle player, "proxy:\a3\data_f\proxies\passenger_low01\cargo.001"] call TF47_rwyl_fnc_moveSeatLocal
 * [player, cursorObject, ""] call TF47_rwyl_fnc_moveSeatLocal
 */
@@ -52,18 +52,29 @@ Move unit into vehicle seat near center of view
 
 params ["_unit", "_vehicle", "_proxy"];
 
-if ( // If seat taken or locked, and same vehicle, exit
-    _proxy == ""
-    && {_vehicle == vehicle _unit} // If other vehicle, move into empty seat
-) exitWith {false};
+private _currentVehicle = vehicle _unit;
+
+// Other Vehicle
+private _mustMoveOut = _unit != _currentVehicle && {_vehicle != _currentVehicle};
 
 // Check if unit needs to be moved out of current vehicle
-private _mustMoveOut = (_unit != vehicle _unit);
 if (_mustMoveOut) then {
     private ["_driverCompartments", "_isDriverIsolated", "_cargoCompartments", "_cargoCompartmentsLast", "_compartment", "_currentTurret", "_moveBackCode", "_moveBackParams"];
 
+    _driverCompartments = (_vehicleConfig >> "driverCompartments") call BIS_fnc_getCfgData;
+    // Air class by default has driverCompartments=0 and cargoCompartments[]={0}, so we have to disable them
+    _isDriverIsolated = _driverCompartments isEqualTo 0 && {_vehicle isKindOf "Air"};
+    TO_COMPARTMENT_STRING(_driverCompartments);
+
+    _cargoCompartments = getArray (_vehicleConfig >> "cargoCompartments");
+    {
+        if !(_x isEqualType "") then {
+            _cargoCompartments set [_forEachIndex, format ["Compartment%1", _x]];
+        };
+    } forEach _cargoCompartments;
+    _cargoCompartmentsLast = count _cargoCompartments - 1;
+
     // find current compartment
-    private _currentVehicle = vehicle _unit;
     private _fullCrew = fullCrew [_currentVehicle, "", true];
     (
         _fullCrew select (_fullCrew findIf {_unit == _x select 0})
@@ -122,14 +133,40 @@ if (_mustMoveOut) then {
 };
 
 [{
-    params ["_unit"];
-    vehicle _unit == _unit
+    params ["_unit", "_vehicle"];
+    private _currentVehicle = vehicle _unit;
+    _currentVehicle == _unit ||
+    {_vehicle == _currentVehicle && {effectiveCommander _vehicle == _unit}}
 },{
     params ["_unit", "_vehicle", "_proxy", "_mustMoveOut", ["_indexOrPath", nil]];
 
     private _fnc_sendIntoCargoOrTurret = {
         params ["_unit", "_vehicle", "_mustMoveOut", ["_indexOrPath", nil]];
-        if (_mustMoveOut) then {
+
+        if (_vehicle == vehicle _unit) exitWith {
+            if (_indexOrPath isEqualType []) then {
+                if (isPlayer _unit) then {
+                } else {
+                    unassignVehicle _unit;
+                    _unit assignAsTurret [_vehicle, _indexOrPath];
+                    [_unit] orderGetIn true;
+                };
+                _unit action ["MoveToTurret", _vehicle, _indexOrPath];
+            } else {
+                private _cargoIndexes = getArray (configOf _vehicle >> "cargoProxyIndexes");
+                if (_cargoIndexes isNotEqualTo []) then {
+                    _indexOrPath = _cargoIndexes find (_indexOrPath + 1);
+                };
+                if (isPlayer _unit) then {
+                } else {
+                    unassignVehicle _unit;
+                    _unit assignAsCargoIndex [_vehicle, _indexOrPath];
+                    [_unit] orderGetIn true;
+                };
+                _unit action ["MoveToCargo", _vehicle, _indexOrPath];
+            };
+        };
+        if (_mustMoveOut || {_unit distance _vehicle > TF47_HopVehicleRange} || {speed _vehicle > 5}) then {
             if (_indexOrPath isEqualType []) then {
                 if (isPlayer _unit) then {
                 } else {
@@ -182,6 +219,7 @@ if (_mustMoveOut) then {
                 _cargoIndexes = getArray (_vehicleConfig >> "cargoProxyIndexes");
             };
             private _indexOrPath = _cargoIndexes find _proxyIndex;
+
             if (_indexOrPath == -1) then {
                 _indexOrPath = _proxyIndex - 1;
             };
@@ -208,28 +246,18 @@ if (_mustMoveOut) then {
 
             [_unit, _vehicle, _mustMoveOut, _indexOrPath] call _fnc_sendIntoCargoOrTurret;
         };
-        case ("driver" in toLower _proxy): {
-            if (_mustMoveOut) then {
-                _unit moveInDriver _vehicle;
+        case ("driver" in toLower _proxy);
+        case ("pilot" in toLower _proxy): {
+            if (_vehicle == vehicle _unit) exitWith {
+                _unit action ["MoveToDriver", _vehicle];
                 if (isPlayer _unit) then {
                 } else {
                     unassignVehicle _unit;
                     _unit assignAsDriver _vehicle;
                     [_unit] orderGetIn true;
-                };
-            } else {
-                if (isPlayer _unit) then {
-                    _unit action ["GetInDriver", _vehicle];
-                } else {
-                    unassignVehicle _unit;
-                    _unit assignAsDriver _vehicle;
-                    [_unit] orderGetIn true;
-                    _unit moveInDriver _vehicle;
                 };
             };
-        };
-        case ("pilot" in toLower _proxy): {
-            if (_mustMoveOut) then {
+            if (_mustMoveOut || {_unit distance _vehicle > TF47_HopVehicleRange} || {speed _vehicle > 5}) then {
                 _unit moveInDriver _vehicle;
                 if (isPlayer _unit) then {
                 } else {
@@ -249,7 +277,16 @@ if (_mustMoveOut) then {
             };
         };
         case ("commander" in toLower _proxy): {
-            if (_mustMoveOut) then {
+            if (_vehicle == vehicle _unit) exitWith {
+                _unit action ["MoveToCommander", _vehicle];
+                if (isPlayer _unit) then {
+                } else {
+                    unassignVehicle _unit;
+                    _unit assignAsCommander _vehicle;
+                    [_unit] orderGetIn true;
+                };
+            };
+            if (_mustMoveOut || {_unit distance _vehicle > TF47_HopVehicleRange} || {speed _vehicle > 5}) then {
                 _unit moveInCommander _vehicle;
                 if (isPlayer _unit) then {
                 } else {
@@ -286,6 +323,12 @@ if (_mustMoveOut) then {
     };
 
     _unit enableSimulation true;
+    private _effectiveCommander = _vehicle getVariable ["TF47_rwyl_effectiveCommander", objNull];
+    if (!isNull _effectiveCommander) then {
+        ["TF47_rwyl_setEffectiveCommander", [_currentVehicle, _effectiveCommander]] call CBA_fnc_globalEvent;
+        _currentVehicle setVariable ["TF47_rwyl_effectiveCommander", objNull, true];
+    };
+
 }, _this + [_mustMoveOut], 1] call CBA_fnc_waitUntilAndExecute;
 
 true

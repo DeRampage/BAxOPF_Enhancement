@@ -6,6 +6,6 @@ ADDON = false;
 
 #include "initSettings.sqf"
 
-GVAR(offset_proxies) = [];
+TF47_rwyl_vehicle_distance = -1;
 
 ADDON = true;

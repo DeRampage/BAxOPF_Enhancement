@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
 Author: Ampers
 Move unit into vehicle seat near center of view
@@ -8,7 +9,7 @@ Move unit into vehicle seat near center of view
 * Return Value:
 * -
 
-* Exrwylle:
+* Example:
 * [player] call TF47_rwyl_fnc_moveSeat
 */
 
@@ -24,7 +25,7 @@ if (TF47_rwyl_isSeatTaken || {TF47_rwyl_isSeatLocked}) then {
             private _proxy = toLower _x;
             private _proxyIndex = _proxy select [(_proxy find ".") + 1];
             // has non-zero selection position
-            !((TF47_rwyl_vehicle selectionPosition _proxy) isEqualTo [0,0,0]) && {
+            !((TF47_rwyl_vehicle selectionPosition [_proxy, "FireGeometry", "AveragePoint"]) isEqualTo [0,0,0]) && {
             // ends with a number after a period
             ((parseNumber _proxyIndex > 0) || {_proxyIndex isEqualTo "0"}) && {
             // contains seat role
@@ -35,7 +36,7 @@ if (TF47_rwyl_isSeatTaken || {TF47_rwyl_isSeatLocked}) then {
         //"no cargo proxies found in selectionNames"
         if (_sn isEqualTo []) exitWith {false};
 
-        private _sp = _sn apply {TF47_rwyl_vehicle selectionPosition _x};
+        private _sp = _sn apply {TF47_rwyl_vehicle selectionPosition [_x, "FireGeometry", "AveragePoint"]};
 
         private _screenPosArray = _sp apply {
             private _w2s = worldToScreen (TF47_rwyl_vehicle modelToWorld _x);
@@ -71,12 +72,21 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
     };
 };
 
+private _currentVehicle = vehicle _unit;
+private _isSameVehicle = TF47_rwyl_vehicle == _currentVehicle;
 // If same vehicle and selected seat is taken/locked then do nothing
-if (TF47_rwyl_proxy == "" && {TF47_rwyl_vehicle == vehicle _unit}) exitWith {
+if (TF47_rwyl_proxy == "" && {_isSameVehicle}) exitWith {
     TF47_rwyl_vehicle = objNull;
     TF47_rwyl_proxy = nil;
 
     false
+};
+
+// If same vehicle then enable moveToSeat actions
+private _effectiveCommander = effectiveCommander _currentVehicle;
+if (_isSameVehicle && {_effectiveCommander != _unit}) then {
+    _currentVehicle setVariable ["TF47_rwyl_effectiveCommander", _effectiveCommander, true];
+    ["TF47_rwyl_setEffectiveCommander", [_currentVehicle, _unit]] call CBA_fnc_globalEvent;
 };
 
 ["TF47_rwyl_moveSeatLocal", [_unit, TF47_rwyl_vehicle, TF47_rwyl_proxy], _unit] call CBA_fnc_targetEvent;
