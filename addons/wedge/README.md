@@ -1,21 +1,15 @@
-# Arma-3-wedge-Charge
-Changes: Added Icons for wedge
+# Arma-3-Breaching-Charge
+**Added:** v1.0
+**Date:** 17.08.23
 
-Added: with Enhancement 1.0
-Date updated: 16.08.23
+No Changes were made to the mod.
 
-wedge charge that sticks to surfaces, demolishes walls, and opens doors, with minimal collateral damage.
+> :memo: Door Wedge that takes a few seconds to deploy and blocks a door from moving and takes longer to remove. 
+> 
+> Class names
+> 
+> `AMP_Door_Wedge`
 
-Class names
-
-`AMP_wedge_Charge_Mag`
-
-Works on doors locked via
-
-```
-_house setVariable ["bis_disabled_Door_1", 1, true];
-```
-
-- Steam Workshop https://steamcommunity.com/sharedfiles/filedetails/?id=1314910827
-- BI Forums https://forums.bohemia.net/forums/topic/215148-wedge-charge/
-- GitHub https://github.com/ampersand38/Breaching-Charge
+- [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1314910827)
+- [BI Forums](https://forums.bohemia.net/forums/topic/215148-breaching-charge-door-wedge/)
+- [GitHub](https://github.com/ampersand38/Breaching-Charge)
