@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {"tf_acr_stationar"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3_Data_F","task_force_radio","task_force_radio_items","ace_interaction","cba_common"};
+        requiredAddons[] = {"A3_Data_F","task_force_radio","task_force_radio_items","tfar_core","ace_interaction","cba_common"};
         authors[] = {"ARAB","KpoT","Rampage"};
         authorUrl = "https://steamcommunity.com/sharedfiles/filedetails/?id=2423977008";
         VERSION_CONFIG;
@@ -44,7 +44,7 @@ class cfgVehicles
         ace_dragging_carryDirection = 0;
         scope = 2;
         scopeCurator = 2;
-        model = "\z\TF47\addons\tfar_additionals\assets\tfr_lr_radio.p3d";
+        model = "";
         mass = 20;
         displayName = "AN/ACR Stationar";
         editorPreview = "\z\TF47\addons\tfar_additionals\assets\tfr_lr_radio.jpg";
@@ -171,6 +171,18 @@ class cfgVehicles
                 };
             };
         };
+    };
+
+    class rope_terminator: ThingX
+    {
+        displayName = "Rope Terminator";
+        //model = "z\TF47\addons\tfar_additionals\assets\rope_terminator.p3d";
+        model = "\A3\Structures_F_EPA\Items\Tools\CanOpener_F.p3d";
+        mapSize = 0.08;
+        scope = 1;
+        scopeCurator = 2;
+        icon = "iconObject_circle";
+        vehicleClass = "Cargo";
     };
 };
 #include "CfgEventHandlers.hpp"

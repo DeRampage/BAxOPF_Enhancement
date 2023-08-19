@@ -24,7 +24,9 @@ if (isWeaponDeployed player) exitWith {};
     _anchor attachto [_starget, [0,0,0],"rope"];
     _pos = position _anchor;
 
-    if (currentWeapon player != "") then {kif_da = [-.01,-.053,-0.084];kif_dv = [[-1,4,0],[-3,-3,-9]];}else{kif_da = [-.011,-.06,-0.085];kif_dv = [[-2,4,0],[-6,-6,-9]];};
+    //if (currentWeapon player != "") then {kif_da = [-.01,-.053,-0.084];kif_dv = [[-1,4,0],[-3,-3,-9]];}else{kif_da = [-.011,-.06,-0.085];kif_dv = [[-2,4,0],[-6,-6,-9]];};
+    
+    /*
     kif_hs = createvehicle["kif_h250u",[0,0,0],[], 0,"CAN_COLLIDE"];
     kif_hs enableRopeAttach true;
     sleep 0.1; 
@@ -33,10 +35,20 @@ if (isWeaponDeployed player) exitWith {};
     _starget animateSource ["hs_hide",1, true];
     radioAnims_playerProbablyReloading=true; // tfar_animations mod compart.
     player playactionnow "take_receiver_anim";
-    _myRope = ropeCreate [kif_hs,"rope",_anchor, "rope", 1.2];
+    */
+
+
+    kif_hs = createSimpleObject ["z\tfar\addons\external_intercom\data\TFAR_handset.p3d", player selectionPosition "head"]; 
+    kif_hs attachTo [player, [-0.14,-0.02,0.02], "head", true]; 
+    kif_hs enableRopeAttach true;
+    kif_hs setVectorDirAndUp [[-2.5,0.8,0.25],[-1,-1,1]];
+
+    //_myRope = ropeCreate [kif_hs,"rope",_anchor, "rope", 1.2];
+    _myRope = ropeCreate [kif_hs, "plug", _anchor, "rope", 50, ["", [0,0,-1]], ["", [0,0,-1]], "TFAR_RopeSmallWire"];
+
     _myRope allowDamage false;
         sleep 0.1;
-    // положить трубку
+    
     stop_calling=false;
 
     _idt = player addAction ["<t color='#FFA500'>"+ ( localize "STR_TF47_tfar_additionals_RADIO_MODUL_PUT_RD")+"</t>",{stop_calling=true;}];
@@ -53,7 +65,7 @@ if (isWeaponDeployed player) exitWith {};
     missionNamespace setVariable ["bis_fnc_moduleRemoteControl_unit", nil];
     TFAR_currentUnit = player;
     // ********** анимация *****************************
-        player playActionNow "phone_anim_stop"; 
+        //player playActionNow "phone_anim_stop"; 
         deletevehicle ((ropeAttachedObjects kif_hs) select 0); deletevehicle ((ropes kif_hs) select 0); deletevehicle kif_hs;
         player removeAction _idt;
         _starget animateSource ["hs_hide",0, true];

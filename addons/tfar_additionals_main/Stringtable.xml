@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="KIF_Radio">
+  <Package name="KIF_Radio">
+    <Container name="KIF_Radio_container">
+    
+       </Key>
+       <Key ID="STR_KIF_RADIO_MODUL_NAME">
+        <Original>Radio Operator Module</Original>
+        <English>Radio Operator Module</English>
+        <Russian>Модуль Радиста</Russian>
+        <German>Funker Module</German>
+        <Czech>Rádio operátor modul</Czech>
+      </Key>
+      <Key ID="STR_KIF_RADIO_MODUL_DESCRIPTION">
+        <Original>Radio operator module for RBC Iron Front mod. Allows players to use TaskForce LR radio of the radio operator via interaction menu. <br/> <t color='#FAFAFA'>Author: [ANVIL] KpoT.</t></Original>
+        <English>Radio operator module for RBC Iron Front mod. Allows players to use TaskForce LR radio of the radio operator via interaction menu. <br/> <t color='#FAFAFA'>Author: [ANVIL] KpoT.</t></English>
+        <Russian>Модуль Радиста для сборки RBC Iron Front. Добавляет возможность игрокам пользоваться TaskForce ДВ рацией находясь рядом с радистом.<br/> <t color='#FAFAFA'>Автор: [ANVIL] KpoT.</t></Russian>
+        <German>Funkmodul für RBC Iron Front mod. Ermöglicht den Spielern die Verwendung des TaskForce LR-Funkgeräts des Funkers über das Interaktionsmenü.<br/> <t color='#FAFAFA'>Autor: [ANVIL] KpoT.</t></German>
+        <Czech>Rádio operátor modul umožňuje hráčům použít dlouhovlnné rádio jiného hráče pomocí menu interakce</Czech>
+      </Key>
+      
+       <Key ID="STR_KIF_RADIO_MODUL_EDIT">
+        <Original>Custom Interaction menu</Original>
+        <English>Custom Interaction menu</English>
+        <Russian>Текст для меню взаимодействия</Russian>
+        <German>Benutzerdefiniertes Interaktionsmenü</German>
+        <Czech>Vlastní text v interakčním menu</Czech>
+      </Key>
+
+       <Key ID="STR_KIF_RADIO_MODUL_EDIT_HINT">
+        <Original>Leave blank for default text</Original>
+        <English>Leave blank for default text</English>
+        <Russian>Оставить пустым для стандартного меню</Russian>
+        <German>Für Standardtext leer lassen</German>
+        <Czech>Nechte prázdné pro výchozí</Czech>
+      </Key>
+      
+      <Key ID="STR_KIF_RADIO_MODUL_STD_TEXT">
+        <Original>Use radio</Original>
+        <English>Use radio</English>
+        <Russian>Использовать рацию</Russian>
+        <German>Verwenden Radio</German>
+        <Czech>Použít rádio</Czech>
+      </Key>
+
+       <Key ID="STR_KIF_RADIO_MODUL_PUT_RD">
+        <Original>Put the receiver down</Original>
+        <English>Put the receiver down</English>
+        <Russian>Положить трубку</Russian>
+        <German>Legen den Hörer auf</German>
+        <Czech>Položit sluchátko</Czech>
+      </Key>
+      
+      <Key ID="STR_KIF_RADIO_SEVER_NAME">
+        <Original>Radio receiver North</Original>
+        <English>Radio receiver North</English>
+        <Russian>Радиостанция Север</Russian>
+        <German>Funkempfänger Nord</German>
+        <Czech>Rádio Sever</Czech>
+      </Key>
+
+       <Key ID="STR_KIF_RADIO_SEVER_SEND">
+        <Original>Text to send</Original>
+        <English>Text to send</English>
+        <Russian>Текст для отправки</Russian>
+        <German>Text zum Senden</German>
+        <Czech>Text k odeslání</Czech>
+      </Key>
+      
+      <Key ID="STR_KIF_RADIO_SEVER_RECEIVE">
+        <Original>Received radiogram</Original>
+        <English>Received radiogram</English>
+        <Russian>Полученная радиограмма</Russian>
+        <German>Empfangenes Radiogramm</German>
+        <Czech>Přijatý radiogram</Czech>
+      </Key>
+
+       <Key ID="STR_KIF_RADIO_SEVER_ERASE">
+        <Original>Erase</Original>
+        <English>Erase</English>
+        <Russian>Стереть</Russian>
+        <German>Löschen</German>
+        <Czech>Vymazat</Czech>
+      </Key>
+      
+     <Key ID="STR_KIF_RADIO_SEVER_START">
+        <Original>Start transmitting</Original>
+        <English>Start transmitting</English>
+        <Russian>Начать передачу</Russian>
+        <German>Übertragung beginnen</German>
+        <Czech>Začněte vysílat</Czech>
+      </Key> 
+      
+      
+      <Key ID="STR_KIF_RADIO_USE">
+        <Original>Use radio</Original>
+        <English>&lt;t color='#FFA500'&gt;Use radio&lt;/t&gt;</English>
+        <Russian>&lt;t color='#FFA500'&gt;Использовать радиостанцию&lt;/t&gt;</Russian>
+        <German>&lt;t color='#FFA500'&gt;Benutzen Funkempfänger&lt;/t&gt;</German>
+        <Czech>&lt;t color='#FFA500'&gt;Použijte rádio&lt;/t&gt;</Czech>
+      </Key>
+      
+      <Key ID="STR_KIF_RADIO_PREP_TRANSP">
+        <Original>Prepare for transportation</Original>
+        <English>Prepare for transportation</English>
+        <Russian>В походное положение</Russian>
+        <German>Vorbereiten für den Transport</German>
+        <Czech>Připravte se na přepravu</Czech>
+      </Key>
+      
+     <Key ID="STR_KIF_RADIO_PREP_USE">
+        <Original>Prepare radio receiver for operation</Original>
+        <English>Prepare radio receiver for operation</English>
+        <Russian>Подготовить радиостанцию к работе</Russian>
+        <German>Funkempfänger für den Betrieb vorbereiten</German>
+        <Czech>Připravte rádio k provozu</Czech>
+      </Key> 
+      
+     <Key ID="STR_KIF_RADIO_IMENU">
+        <Original>Interaction menu type</Original>
+        <English>Interaction menu type</English>
+        <Russian>Тип меню взаимодействия</Russian>
+        <German>Art des Interaktionsmenüs</German>
+        <Czech>Typ nabídky interakce</Czech>
+      </Key>
+      
+     <Key ID="STR_KIF_RADIO_IMENU_HINT">
+        <Original>Which Interaction type to use</Original>
+        <English>Which Interaction type to use</English>
+        <Russian>Какой тип взаимодействия использовать</Russian>
+        <German>Welcher Interaktionstyp verwendet werden soll</German>
+        <Czech>Jaký typ interakce použít</Czech>
+      </Key>  
+      
+     <Key ID="STR_KIF_RADIO_ONLY_SELECTED">
+        <Original>Only for the following classes:</Original>
+        <English>Only for the following classes:</English>
+        <Russian>Только для следующих классов:</Russian>
+        <German>Nur für folgende Klassen:</German>
+        <Czech>Pouze pro následující třídy:</Czech>
+      </Key>
+      
+     <Key ID="STR_KIF_RADIO_ONLY_SELECTED_HINT">
+        <Original>Mark to limit LR radios to the only listed</Original>
+        <English>Mark to limit LR radios to the only listed</English>
+        <Russian>Отметьте, чтобы ограничить радиостанции LR только перечисленными</Russian>
+        <German>Markieren, um LR-Funkgeräte auf die einzigen aufgelisteten zu beschränken</German>
+        <Czech>Označením omezíte LR rádia na jediné uvedené</Czech>
+      </Key>    
+      
+     <Key ID="STR_KIF_RADIO_ARRAY">
+        <Original>Array of radio backpack classes</Original>
+        <English>Array of radio backpack classes</English>
+        <Russian>Массив классов радиорюкзаков</Russian>
+        <German>Reihe von Funkrucksackklassen</German>
+        <Czech>Pole tříd rádiových batohů</Czech>
+      </Key> 
+      
+      
+      
+      
+    </Container>
+  </Package>
+</Project>
+
