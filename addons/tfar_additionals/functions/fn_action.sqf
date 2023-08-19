@@ -39,7 +39,7 @@ if (isWeaponDeployed player) exitWith {};
     // положить трубку
     stop_calling=false;
 
-    _idt = player addAction ["<t color='#FFA500'>"+ ( localize "STR_KIF_RADIO_MODUL_PUT_RD")+"</t>",{stop_calling=true;}];
+    _idt = player addAction ["<t color='#FFA500'>"+ ( localize "STR_TF47_tfar_additionals_RADIO_MODUL_PUT_RD")+"</t>",{stop_calling=true;}];
 
     [_starget,_idt] spawn
     { params ["_starget","_idt"];

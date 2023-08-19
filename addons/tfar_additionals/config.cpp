@@ -63,7 +63,7 @@ class cfgVehicles
                 class ACE_RadioLR_Use
                 {
                     selection = "";
-                    displayName = "$STR_KIF_RADIO_USE";
+                    displayName = "$STR_TF47_tfar_additionals_RADIO_USE";
                     condition = "(alive _target) and (({typeof _x == 'rope_terminator'} count (attachedObjects _target))<1)and(({_x isKindOf 'kif_handset'} count (attachedObjects player))<1)";
                     statement = "_target execVM '\z\TF47\addons\tfar_additionals\functions\fn_action.sqf';";
                     showDisabled = 0;
@@ -72,7 +72,7 @@ class cfgVehicles
                 class ACE_FF_Force_Put_HS
                 {
                     selection = "";
-                    displayName = "$STR_KIF_FIELDPHONE_PUT_RD";
+                    displayName = "$STR_TF47_tfar_additionals_FIELDPHONE_PUT_RD";
                     condition = "(({ if (typeof _x == 'rope_terminator') then { !isPlayer (attachedTo (ropeAttachedTo _x))} else { false }; } count (attachedObjects _target) )>0)";
                     statement = "{if (typeof _x == 'rope_terminator') then {deletevehicle (ropeAttachedTo _x); deletevehicle _x;}; } foreach (attachedObjects _target); _target animateSource ['hs_hide',0, true]; ";
                     showDisabled = 0;
@@ -84,7 +84,7 @@ class cfgVehicles
         {
             class kif_use_lr_stationar
             {
-                displayName = "$STR_KIF_RADIO_USE";
+                displayName = "$STR_TF47_tfar_additionals_RADIO_USE";
                 displayNameDefault = "";
                 position = "";
                 radius = 2.0;
