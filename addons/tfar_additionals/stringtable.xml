@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TF47">
+    <Package name="tfar_additionals">
+        <Key ID="STR_KIF_RADIO_USE">
+            <English>&lt;t color='#FFA500'&gt;Use radio&lt;/t&gt;</English>
+            <Russian>&lt;t color='#FFA500'&gt;Использовать радиостанцию&lt;/t&gt;</Russian>
+            <German>&lt;t color='#FFA500'&gt;Benutzen Funkempfänger&lt;/t&gt;</German>
+            <Czech>&lt;t color='#FFA500'&gt;Použijte rádio&lt;/t&gt;</Czech>
+        </Key>
+        <Key ID="STR_KIF_FIELDPHONE_PUT_RD">
+            <English>&lt;t color='#55ffff'&gt;Put the receiver down&lt;/t&gt;</English>
+            <Russian>&lt;t color='#55ffff'&gt;Положить трубку&lt;/t&gt;</Russian>
+            <German>&lt;t color='#55ffff'&gt;Legen den Hörer auf&lt;/t&gt;</German>
+        </Key>
+    </Package>
+</Project>
